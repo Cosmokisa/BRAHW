@@ -77,28 +77,28 @@ background-position: center;
 background-repeat: no-repeat;
 background-attachment:fixed;
 background-size: cover;
-height: 100vh;
+height: 180vh;
 width: 100%;
 display: flex;
 }
 
 .info_background_overlay {
-height: 100vh;
+height: 180vh;
 width: 100%;
 background-color: rgba(168, 124, 124, 0.2);
 }
 
-.div_container {
+/* .div_container {
 display: flex;
 column-gap: 40px;
 height: 100vh; 
-}
+} */
 
 /* experience style */
 
 .experience_info {
-border: 1px, solid, #503C3C;
-width: 50%;
+/* border: 1px, solid, #503C3C; */
+width: 100%;
 }
 
 .experience_info h2 {
@@ -158,8 +158,8 @@ font-size: 20px;
 /* courses style */
 
 .courses_info {
-border: 1px, solid, #503C3C;
-width: 50%;
+/* border: 1px, solid, #503C3C; */
+width: 100%;
 } 
 
 .courses_info h2 {
@@ -178,11 +178,12 @@ width: 50%;
   font-weight: 100;
   font-size: 40px;
   margin-top: 40px;
-  color: #7E6363;
+  color:#3E3232;
+  background-color: #A87C7C;
 }
 
 .courses_info h4 {
-text-align: left;
+text-align: center;
 font-family: "Permanent Marker", serif;
 font-weight: 100;
 font-size: 20px;
@@ -198,11 +199,33 @@ padding-left: 20px;
 .courses_info li {
 color: #7E6363;
 text-decoration: none;
-padding-right: 40px;
 padding-top: 20px;
-text-align: right;
+text-align: center;
 font-family: "Permanent Marker", serif;
 font-size: 20px;
 }
 
-/* table style */
+/* contact info style */
+
+.contact_info {
+  background-color: #3E3232;
+}
+
+.contact_info h2 {
+  text-align: center;
+  font-family: "Permanent Marker", serif;
+  font-weight: 100;
+  font-size: 60px;
+  color:#A87C7C;
+  padding-top: 20px;
+}
+
+.contact_info a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  text-align: center;
+  font-family: "Permanent Marker", serif;
+  font-weight: 100;
+}
