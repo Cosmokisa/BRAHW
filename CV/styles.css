@@ -77,13 +77,13 @@ background-position: center;
 background-repeat: no-repeat;
 background-attachment:fixed;
 background-size: cover;
-height: 180vh;
+height: 210vh;
 width: 100%;
 display: flex;
 }
 
 .info_background_overlay {
-height: 180vh;
+height: 210vh;
 width: 100%;
 background-color: rgba(168, 124, 124, 0.2);
 }
@@ -186,7 +186,7 @@ width: 100%;
 text-align: center;
 font-family: "Permanent Marker", serif;
 font-weight: 100;
-font-size: 20px;
+font-size: 30px;
 margin-top: 40px;
 color: #503C3C;
 padding-left: 20px;
