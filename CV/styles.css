@@ -1,3 +1,11 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+
+/* welcome page styles */
+
 .welcome_page_image { 
 background-image: url('./images/m.jpg');
 background-position: center;
@@ -12,7 +20,7 @@ display: flex;
 .welcome_page_image_overlay {
 height: 100vh;
 width: 100%;
-background-color: rgba(80, 60, 60, 0.7);
+background-color: rgba(80, 60, 60, 0.6);
 }
 
 
@@ -22,7 +30,7 @@ background-color: rgba(80, 60, 60, 0.7);
   font-style: normal;
   padding-top: 300px; 
   font-size: 40px;
-  color: #3E3232;
+  color: #503C3C;
   width: 50%;
   text-align: center;
 }
@@ -57,8 +65,99 @@ float: right;
   font-family: "Permanent Marker", serif;
   font-weight: 400;
   font-style: normal;
-  color: #3E3232;
+  color: #503C3C;
   font-size: 30px;
   width: 50%;
   text-align: center;
 }
+
+/* experience background style */
+
+.experience_img {
+background-image: url('./images/mo.avif');
+background-position: center;
+background-repeat: no-repeat;
+background-attachment:fixed;
+background-size: cover;
+height: 100vh;
+width: 100%;
+display: flex;
+}
+
+.experience_background_overlay {
+height: 100vh;
+width: 100%;
+background-color: rgba(168, 124, 124, 0.5);
+}
+
+/* experience style */
+
+.experience_info {
+  border: 1px, solid, black;
+  width: 50%;
+  height: 100vh; 
+} 
+
+.experience_info h2 {
+  text-align: center;
+  font-family: "Permanent Marker", serif;
+  font-weight: 100;
+  font-size: 60px;
+  margin-top: 40px;
+  color:#503C3C;
+  padding-top: 20px;
+}
+
+.experience_info h3 {
+  text-align: center;
+  font-family: "Permanent Marker", serif;
+  font-weight: 100;
+  font-size: 40px;
+  margin-top: 40px;
+  color: #7E6363;
+}
+
+.experience_info h4 {
+  text-align: left;
+  font-family: "Permanent Marker", serif;
+  font-weight: 100;
+  font-size: 20px;
+  margin-top: 40px;
+  color: #503C3C;
+  padding-left: 20px;
+}
+
+.experience_info p {
+text-align: right;
+padding-right: 20px;
+padding-top: 20px;
+font-family: "Permanent Marker", serif;
+font-size: 20px;
+color: #7E6363;
+padding-top: 20px;
+}
+
+.experience_info ul {
+list-style-type: none;
+/* background-color: #3E3232; */
+}
+
+.experience_info li {
+color: #7E6363;
+text-decoration: none;
+padding-left: 40px;
+padding-top: 20px;
+/* display: block; */
+text-align: left;
+font-family: "Permanent Marker", serif;
+font-size: 20px;
+}
+
+/* .courses_info {
+  border: 1px, solid, black;
+  width: 50%;
+  height: 100vh;
+  margin-left: 50%;
+  text-align: right;
+}  */
+
