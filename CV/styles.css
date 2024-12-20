@@ -3,7 +3,6 @@
   margin: 0px;
 }
 
-
 /* welcome page styles */
 
 .welcome_page_image { 
@@ -20,9 +19,8 @@ display: flex;
 .welcome_page_image_overlay {
 height: 100vh;
 width: 100%;
-background-color: rgba(80, 60, 60, 0.6);
+background-color: rgba(80, 60, 60, 0.5);
 }
-
 
 .welcome_text {
   font-family: "Permanent Marker", serif;
@@ -73,7 +71,7 @@ float: right;
 
 /* experience background style */
 
-.experience_img {
+.info_img {
 background-image: url('./images/mo.avif');
 background-position: center;
 background-repeat: no-repeat;
@@ -84,19 +82,24 @@ width: 100%;
 display: flex;
 }
 
-.experience_background_overlay {
+.info_background_overlay {
 height: 100vh;
 width: 100%;
-background-color: rgba(168, 124, 124, 0.5);
+background-color: rgba(168, 124, 124, 0.2);
+}
+
+.div_container {
+display: flex;
+column-gap: 40px;
+height: 100vh; 
 }
 
 /* experience style */
 
 .experience_info {
-  border: 1px, solid, black;
-  width: 50%;
-  height: 100vh; 
-} 
+border: 1px, solid, #503C3C;
+width: 50%;
+}
 
 .experience_info h2 {
   text-align: center;
@@ -139,7 +142,6 @@ padding-top: 20px;
 
 .experience_info ul {
 list-style-type: none;
-/* background-color: #3E3232; */
 }
 
 .experience_info li {
@@ -153,11 +155,54 @@ font-family: "Permanent Marker", serif;
 font-size: 20px;
 }
 
-/* .courses_info {
-  border: 1px, solid, black;
-  width: 50%;
-  height: 100vh;
-  margin-left: 50%;
-  text-align: right;
-}  */
+/* courses style */
 
+.courses_info {
+border: 1px, solid, #503C3C;
+width: 50%;
+} 
+
+.courses_info h2 {
+  text-align: center;
+  font-family: "Permanent Marker", serif;
+  font-weight: 100;
+  font-size: 60px;
+  margin-top: 40px;
+  color:#503C3C;
+  padding-top: 20px;
+}
+
+.courses_info h3 {
+  text-align: center;
+  font-family: "Permanent Marker", serif;
+  font-weight: 100;
+  font-size: 40px;
+  margin-top: 40px;
+  color: #7E6363;
+}
+
+.courses_info h4 {
+text-align: left;
+font-family: "Permanent Marker", serif;
+font-weight: 100;
+font-size: 20px;
+margin-top: 40px;
+color: #503C3C;
+padding-left: 20px;
+}
+
+.courses_info ul {
+  list-style-type: none;
+}
+
+.courses_info li {
+color: #7E6363;
+text-decoration: none;
+padding-right: 40px;
+padding-top: 20px;
+text-align: right;
+font-family: "Permanent Marker", serif;
+font-size: 20px;
+}
+
+/* table style */
