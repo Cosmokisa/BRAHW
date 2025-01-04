@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .main_back {
+    background-color:#3399CC;
+    width: 1440px;
+    height: 900px;
+    border: 25px, solid, #2B81AC;
+    color: white;
+    font-family:'Lucida Sans Unicode', sans-serif;
+    font-size: 21px;
+  }
+
+  .main_back > h1, p {
+    display: inline;
+  }
