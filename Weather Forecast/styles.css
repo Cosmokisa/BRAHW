@@ -1,19 +1,128 @@
-* {
+ * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+  } 
 
-  .main_back {
-    background-color:#3399CC;
+  html {
     width: 1440px;
     height: 900px;
+  }
+
+  .main_background {
+    background-color:#3399CC;
     border: 25px, solid, #2B81AC;
     color: white;
     font-family:'Lucida Sans Unicode', sans-serif;
-    font-size: 21px;
+    width: 1440px;
+    height: 900px;
+    padding-left: 112px;
   }
 
-  .main_back > h1, p {
-    display: inline;
+  .title {
+   display: inline;
+   font-size: 21px;
   }
+
+  .grid {
+    border: 2px, solid, white;
+    width: 1170px;
+    height: 592px;
+    background-color: white;
+    font-size: 22px;
+}
+
+ .first_row {
+    display: flex;
+    Height: 147px;
+    text-align: center;
+ }
+
+ .second_row {
+    display: flex;
+    Height: 147px;
+    text-align: center;
+ }
+
+ .third_row {
+    display: flex;
+    Height: 147px;
+    text-align: center;
+ } 
+
+ .fourth_row { 
+    display: flex;
+    Height: 147px;
+    text-align: center;
+ }
+  
+   .lisbon {
+    background: #3399CC;
+    flex: 2;
+    border: 2px, solid, white;
+   }
+   
+   .paris {
+    background: #33CCCC;
+    flex: 1;
+    border: 2px, solid, white;
+   }
+
+   .belgrade {
+    background: #996699;
+    flex: 1;
+    border: 2px, solid, white;
+   }
+
+   .venice {
+    background: #C24747;
+    flex: 1;
+    border: 2px, solid, white;
+   }
+
+   .tel_avive {
+    background: #E2674A;
+    flex: 1;
+    border: 2px, solid, white;
+   }
+
+   .cair {
+    background: #FFCC66;
+    flex: 1;
+    border: 2px, solid, white;
+   }
+
+   .new_york {
+    background: #99CC99;
+    flex: 1;
+    border: 2px, solid, white;
+   }
+
+   .new_delhi {
+    background: #669999;
+    flex: 1;
+    border: 2px, solid, white;
+   }
+
+   .san_francisco {
+    background: #CC6699;
+    flex: 2;
+    border: 2px, solid, white;
+   }
+
+   .tokyo {
+    background: #339966;
+    flex: 1;
+    border: 2px, solid, white;
+   }
+
+   .sydney {
+    background: #666699;
+    flex: 3;
+    border: 2px, solid, white;
+   }
+
+   .grid > p {
+    margin-top: 35px;
+    font-size: 16px;
+   }
