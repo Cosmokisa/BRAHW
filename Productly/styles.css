@@ -69,7 +69,7 @@ li {
 /* styles for welcome part */
 .welcome_container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 40px 200px 40px 200px;
     flex-flow: row nowrap;
     width: 100vw;    
@@ -119,19 +119,61 @@ h1 {
 
 /* section with columns */
 .tools {
-    padding: 40px 200px 40px 200px;
+    margin: 40px 200px 40px 200px;
+    text-align: center;
+    
 }
 .tools > h2 {
     font-size: 50px;
     font-weight: 700;
-    padding-top: 30px;
-    padding-bottom: 60px;
-    text-align: center;
 }
 .column_part {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content:space-around;
+    font-size: 20px;
+    gap:40px;
+    height: 400px;
+    padding-top: 60px;
+    padding-bottom: 30px;
+}
+
+.column_part > div > h3 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 25px;
+}
+
+.tools > button {
+    margin-top: 60px;
+    margin-bottom: 30px;
+    height: 70px;
+    width: 220px;
+}
+
+/* designers section */
+
+.designers {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 200px 40px 200px;
+}
+
+.designers_text > h2 {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.designers_text > p {
+    margin-bottom: 30px;
+    margin-top: 20px;
     font-size: 20px;
 }
 
+/* product manager part */
+
+.product_managers {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 200px 40px 200px;
+}
