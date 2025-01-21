@@ -53,6 +53,8 @@ li {
     font-size: 20px
 }
 
+
+
 .orange {
     border: none;
     border-radius: 4px;
@@ -63,7 +65,12 @@ li {
     font-family: "Poppins", serif;
     background-color: #FF9900;
     font-weight: 600;
-    font-size: 20px
+    font-size: 20px;
+}
+
+.main_button {
+    height: 70px;
+    width: 230px;
 }
 
 /* styles for welcome part */
@@ -94,12 +101,6 @@ h1 {
     margin-top: 70px;
 }
 
-.link_and_button > button {
-    padding: 8px 22px;
-    height: 70px;
-    width: 220px;
-}
-
 .link_and_button > img {
     margin: 20px;
     height: 28px;
@@ -118,14 +119,22 @@ h1 {
 }
 
 /* section with columns */
+
 .tools {
-    margin: 40px 200px 40px 200px;
-    text-align: center;
+    margin: 70px 200px 0 200px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    
     
 }
 .tools > h2 {
     font-size: 50px;
     font-weight: 700;
+    height: 100px;
+    width: 700px;
+    text-align: center;
+    margin-bottom: 40px;
 }
 .column_part {
     display: flex;
@@ -136,6 +145,12 @@ h1 {
     height: 400px;
     padding-top: 60px;
     padding-bottom: 30px;
+    
+}
+
+.column_part > div {
+    flex-basis: 400px;
+    text-align: start;
 }
 
 .column_part > div > h3 {
@@ -144,19 +159,18 @@ h1 {
     font-size: 25px;
 }
 
-.tools > button {
-    margin-top: 60px;
-    margin-bottom: 30px;
+/* .tools > button {
+    margin-bottom: 50px;
     height: 70px;
     width: 220px;
-}
+} */
 
 /* designers section */
 
 .designers {
     display: flex;
     justify-content: space-around;
-    margin: 40px 200px 40px 200px;
+    margin: 160px 200px 60px 200px;
 }
 
 .designers_text > h2 {
@@ -170,10 +184,102 @@ h1 {
     font-size: 20px;
 }
 
+.designers_text {
+    margin-right: 40px;
+}
+
 /* product manager part */
 
 .product_managers {
     display: flex;
     justify-content: space-around;
-    margin: 40px 200px 40px 200px;
+    margin: 80px 200px 80px 200px;
+    font-size: 20px;
+}
+
+.product_managers_text > h2 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.product_managers_text {
+    margin-left: 40px;
+}
+
+/* .done::before {
+    content: url(/image/icon_done.png);
+} */
+
+/* .product_managers_text > ul >li {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+} */
+
+.list {
+    display: flex;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.list > img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+/* marketers section */
+    
+.marketers {
+    display: flex;
+    justify-content: space-around;
+    margin: 60px 200px 60px 200px;
+}
+
+.marketers_text > h2 {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.marketers_text > p {
+    margin-bottom: 30px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.marketers_text {
+    margin-right: 40px;
+}
+
+/* footer */
+footer {
+   margin: 60px 200px 60px 200px;
+}
+
+hr {
+    margin-bottom: 100px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.first_list_footer, .second_list_footer, .sing_up {
+    padding-top: 100px;
+}
+
+.sing_up {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+input[type="email"] {
+    border: 1px solid #BCD0E5;
+    width: 325px;
+    height: 40px;
 }
