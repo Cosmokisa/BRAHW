@@ -3,119 +3,102 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./output.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
     <title>Productly</title>
   </head>
   <body>
-    <header class="header-container">
-      <div class="header-container_logo">
-        <img src="./image/logo.png" alt="logo" />
-        <img src="./image/logo_text.png" alt="productly" />
+    <header class="navbar">
+      <div class="navbar_logo logo">
+        <img class="logo_img" src="./image/logo.png" alt="logo" />
+        <img class="logo_img" src="./image/logo_text.png" alt="productly" />
       </div>
-      <div class="header-container_nav">
+      <div class="navbar_res">
         <nav>
-          <ul class="header-container_nav_list">
-            <li class="header-container_nav_ul_item">Product</li>
-            <li class="header-container_nav_ul_item">Customers</li>
-            <li class="header-container_nav_ul_item">Pricing</li>
-            <li class="header-container_nav_ul_item">Resources</li>
+          <ul class="navbar_res_list">
+            <li class="navbar_res_list_item">Product</li>
+            <li class="navbar_res_list_item">Customers</li>
+            <li class="navbar_res_list_item">Pricing</li>
+            <li class="navbar_res_list_item">Resources</li>
           </ul>
         </nav>
-        <input
-          class="header-container_nav_transparent"
-          type="button"
-          value="Sing In"
-        />
-        <input
-          class="header-container_nav_orange"
-          type="button"
-          value="Sing Up"
-        />
+        <button class="navbar_res_btn transparent">Sign In</button>
+        <button class="navbar_res_btn orange">Sign Up</button>
       </div>
     </header>
-    <section class="welcome-container">
-      <div class="welcome-container_text">
-        <h1 class="welcome-container_text_title">
-          The Design Thinking superpowers
-        </h1>
+    <section class="welcome">
+      <div class="welcome_text">
+        <h1 class="welcome_text_title">The Design Thinking superpowers</h1>
         <p>
           Tools, tutorials, design and innovation experts, all in one place! The
           most intuitive way to imagine your next user experience.
         </p>
-        <div class="welcome-container_text_sourses">
-          <button class="welcome-container_text_sourses_button">
-            Get started
-          </button>
-          <img
-            src="./image/Triangle.png"
-            alt="play"
-            class="welcome-container_text_sourses_img"
-          />
+        <div class="welcome-_text_sources">
+          <button class="welcome_text_sources_button">Get started</button>
           <a
-            class="welcome-container_text_sourses_link"
+            class="welcome_text_sources_link"
             href="https://www.youtube.com/watch?v=tgbNymZ7vqY"
             >Watch the Video</a
           >
         </div>
       </div>
       <img
-        class="welcome-container_img"
+        class="welcome_img"
         src="./image/happy_people.png"
         alt="happy people"
       />
     </section>
     <section class="tools">
-      <h2 class="tools_title">We design tools to unveil your superpowers</h2>
+      <h2 class="tools_title title">
+        We design tools to unveil your superpowers
+      </h2>
       <div class="tools_table">
         <div class="tools_table_column">
           <img
-            class="tools_table_column_img"
+            class="tools_table_column_item"
             src="./image/icon_1.png"
             alt="icon with cursor"
           />
-          <h3 class="tools_table_column_title">First click tests</h3>
-          <p class="tools_table_column_text">
+          <p class="tools_table_column_item subtitle">First click tests</p>
+          <p class="tools_table_column_item text">
             While most people enjoy casino gambling,
           </p>
         </div>
         <div class="tools_table_column">
           <img
-            class="tools_table_column_img"
+            class="tools_table_column_item"
             src="./image/icon_2.png"
             alt="icon with waves"
           />
-          <h3 class="tools_table_column_title">Design surveys</h3>
-          <p class="tools_table_column_text">
+          <p class="tools_table_column_item subtitle">Design surveys</p>
+          <p class="tools_table_column_item text">
             Sports betting, lottery and bingo playing for the fun
           </p>
         </div>
         <div class="tools_table_column">
           <img
-            class="tools_table_column_img"
+            class="tools_table_column_item"
             src="./image/icon_3.png"
             alt="icon with heart"
           />
-          <h3 class="tools_table_column_title">Preference tests</h3>
-          <p class="tools_table_column_text">
+          <p class="tools_table_column_item subtitle">Preference tests</p>
+          <p class="tools_table_column_item text">
             The Myspace page defines the individual.
           </p>
         </div>
         <div class="tools_table_column">
           <img
-            class="tools_table_column_img"
+            class="tools_table_column_item"
             src="./image/icon_4.png"
             alt="icon with hourglass"
           />
-          <h3 class="tools_table_column_title">Five second tests</h3>
-          <p class="tools_table_column_text">
+          <p class="tools_table_column_item subtitle">Five second tests</p>
+          <p class="tools_table_column_item text">
             Personal choices and the overall personality of the person.
           </p>
         </div>
@@ -125,22 +108,22 @@
     <section class="designers">
       <div class="designers_info">
         <p class="designers_info_text">Effortless Validation for</p>
-        <h2 class="designers_info_title">Design Professionals</h2>
+        <h2 class="designers_info_title title">Design Professionals</h2>
         <p class="designers_info_text">
           The Myspace page defines the individual, his or her characteristics,
           traits, personal choices and the overall personality of the person.
         </p>
-        <h3 class="designers_info_subtitle">Accessory makers</h3>
+        <p class="designers_info_subtitle">Accessory makers</p>
         <p class="designers_info_text">
           While most people enjoy casino gambling, sports betting, lottery and
           bingo playing for the fun
         </p>
-        <h3 class="designers_info_subtitle">Alterationists</h3>
+        <p class="designers_info_subtitle">Alterationists</p>
         <p class="designers_info_text">
           If you are looking for a new way to promote your business that won’t
           cost you more money,
         </p>
-        <h3 class="designers_info_subtitle">Custom Design designers</h3>
+        <p class="designers_info_subtitle">Custom Design designers</p>
         <p class="designers_info_text">
           If you are looking for a new way to promote your business that won’t
           cost you more money,
@@ -160,66 +143,45 @@
       />
       <div class="product-managers_info">
         <p class="product-managers_info_text">Easier decision making for</p>
-        <h2 class="product-managers_info_title">Product Managers</h2>
-        <p>
+        <h2 class="product-managers_info_title title">Product Managers</h2>
+        <p class="product-managers_info_text">
           The Myspace page defines the individual, his or her characteristics,
           traits, personal choices and the overall personality of the person.
         </p>
         <div class="product-managers_info_list">
-          <div class="product-managers_info_list_item">
-            <img
-              class="product-managers_info_list_item_img"
-              src="./image/icon_done.png"
-              alt="icon_done"
-            />
-            <p class="product-managers_info_list_item_text">
-              Never worry about overpaying for your energy again.
-            </p>
-          </div>
-          <div class="product-managers_info_list_item">
-            <img
-              class="product-managers_info_list_item_img"
-              src="./image/icon_done.png"
-              alt="icon_done"
-            />
-            <p class="product-managers_info_list_item_text">
-              We will only switch you to energy companies that we trust and will
-              treat you right.
-            </p>
-          </div>
-          <div class="product-managers_info_list_item">
-            <img
-              class="product-managers_info_list_item_img"
-              src="./image/icon_done.png"
-              alt="icon_done"
-            />
-            <p class="product-managers_info_list_item_text">
-              We track the markets daily and know where the savings are.
-            </p>
-          </div>
+          <p class="product-managers_info_list_item">
+            Never worry about overpaying for your energy again.
+          </p>
+          <p class="product-managers_info_list_item">
+            We will only switch you to energy companies that we trust and will
+            treat you right.
+          </p>
+          <p class="product-managers_info_list_item">
+            We track the markets daily and know where the savings are.
+          </p>
         </div>
       </div>
     </section>
     <section class="marketers">
       <div class="marketers_info">
         <p class="marketers_info_text">Optimisation for</p>
-        <h2 class="marketers_info_title">Marketers</h2>
+        <h2 class="marketers_info_title title">Marketers</h2>
         <p class="marketers_info_text">
           Few would argue that, despite the advancements of feminism over the
           past three decades, women still face a double standard when it comes
           to their behavior.
         </p>
-        <h3 class="marketers_info_subtitle">Accessory makers</h3>
+        <p class="marketers_info_subtitle">Accessory makers</p>
         <p class="marketers_info_text">
           While most people enjoy casino gambling, sports betting, lottery and
           bingo playing for the fun
         </p>
-        <h3 class="marketers_info_subtitle">Alterationists</h3>
+        <p class="marketers_info_subtitle">Alterationists</p>
         <p class="marketers_info_text">
           If you are looking for a new way to promote your business that won’t
           cost you more money,
         </p>
-        <h3 class="marketers_info_subtitle">Custom Design designers</h3>
+        <p class="marketers_info_subtitle">Custom Design designers</p>
         <p class="marketers_info_text">
           If you are looking for a new way to promote your business that won’t
           cost you more money,
@@ -231,36 +193,34 @@
         alt="man with screen"
       />
     </section>
-    <footer class="footer">
+    <footer>
       <hr />
-      <div class="footer_info">
-        <div class="footer_info_logo">
-          <img class="footer_info_logo_img" src="./image/logo.png" alt="logo" />
-          <img
-            class="footer_info_logo_img"
-            src="./image/logo_text.png"
-            alt="productly"
-          />
+      <div class="footer">
+        <div class="footer_logo logo">
+          <img class="logo_img" src="./image/logo.png" alt="logo" />
+          <img class="logo_img" src="./image/logo_text.png" alt="productly" />
         </div>
-        <div class="footer_info_list">
-          <ul>
-            <li>About Us</li>
-            <li>Blog</li>
-            <li>Contact</li>
-            <li>FAQ</li>
-          </ul>
-        </div>
-        <div class="footer_info_list">
-          <ul>
-            <li>Disclaimer</li>
-            <li>Financing</li>
-            <li>Privacy Policy</li>
-            <li>Terms of Service</li>
-          </ul>
-        </div>
-        <div class="footer_info_data">
-          <input class="footer_info_data_input" type="email" />
-          <button class="footer_info_data_button">Sing up Now</button>
+        <div class="footer_info">
+          <div>
+            <ul class="footer_info_list">
+              <li>About Us</li>
+              <li>Blog</li>
+              <li>Contact</li>
+              <li>FAQ</li>
+            </ul>
+          </div>
+          <div>
+            <ul class="footer_info_list">
+              <li>Disclaimer</li>
+              <li>Financing</li>
+              <li>Privacy Policy</li>
+              <li>Terms of Service</li>
+            </ul>
+          </div>
+          <div class="footer_info_data">
+            <input class="footer_info_data_input" type="email" />
+            <button class="footer_info_data_button">Sing up Now</button>
+          </div>
         </div>
       </div>
     </footer>

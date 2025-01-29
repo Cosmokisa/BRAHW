@@ -1,0 +1,297 @@
+// variables
+
+$font-stack: "Poppins",serif;
+
+//extensions
+
+//buttons
+%buttons {
+  border-radius: 4px;
+  cursor: pointer;
+  $font-stack: "Sour Gummy", serif;
+  font-weight: 600;
+  align-items: center;
+}
+
+%orange {
+  border: none;
+  color: white;
+  background-color: #FF9900;
+}
+
+%bigbtn {
+  height: 70px;
+  width: 230px;
+  font-size: 25px;
+}
+
+%transparent {
+  border: 1px solid #173A56;
+  color: #173A56;
+  background: transparent;
+}
+
+// text anf font extensions 
+
+%base-text {
+  font-size: 22px;
+  font-weight: 300;
+}
+
+%heading-text {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+%sub-heading {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+//mixin
+
+@mixin text-content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content:space-evenly;
+  align-items:flex-start;
+  gap: 20px;
+  padding: 40px 0 40px 0;
+}
+
+@mixin section {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 100px;
+  margin: 80px 200px 0 200px;
+}
+
+@mixin container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+//global
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  font-family:$font-stack
+}
+
+.logo {
+  @include container;
+    height: 50px;
+    width: 200px;
+    &_img:last-of-type {
+      padding-top: 8px;
+    }
+}
+
+.title {
+  @extend %heading-text;
+}
+
+li {
+  list-style: none;
+}
+
+// styles for navigation 
+
+.navbar {
+  @include container;
+  margin-top: 60px;
+    &_logo {
+      @include container;
+      height: 50px;
+      width: 200px;
+     }
+    &_res, &_res_list {
+      @include container;
+      gap: 40px;
+     } 
+}
+
+.navbar_res_list_item {
+  display: inline-block;
+  font-size: 25px;
+}
+
+.navbar_res_btn {
+  height: 50px;
+  width: 120px;
+  font-size: 20px;
+}   
+
+.transparent {
+  @extend %transparent;
+  @extend %buttons;
+}
+
+.orange {
+  @extend %orange;
+  @extend %buttons;
+}
+
+/* styles for welcome part */
+.welcome {
+  @include section;
+  margin-bottom: 100px; 
+}
+
+.welcome_text {
+  @extend %base-text;
+  @include text-content;
+  &_title{
+    font-size: 60px;
+    font-weight: 700;
+  }
+}
+
+.welcome_text_sources_button {
+  @extend %buttons ;
+  @extend %orange;
+  @extend %bigbtn;
+  margin: 60px 30px 0 0;
+}
+
+.welcome_text_sources_link {
+  color: #FF9900;
+  @extend %sub-heading;
+  padding-top: 18px;
+  &::before{
+    content: url(./image/Triangle.png);
+    margin-right: 10px;
+  }
+}
+
+/* section with columns */
+
+.tools {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.tools_table {
+  @include section;
+  &_column {
+    flex-basis: 400px;
+    &_item {
+      padding: 10px 0 10px 0;
+    }
+  }
+}
+
+.subtitle {
+  @extend %sub-heading;
+}
+
+.text {
+  @extend %base-text;
+}
+
+.tools_button {
+  margin-top: 100px;
+  @extend %orange;
+  @extend %buttons;
+  @extend %bigbtn;
+}
+
+/* designers section */
+.designers {
+  @include section;
+}
+
+.designers_info {
+  @include text-content;
+  &_subtitle {
+  @extend %sub-heading;
+  }
+  &_text {
+  @extend %base-text;
+  }
+}
+
+/* product manager part */
+.product-managers {
+  @include section;
+}
+
+.product-managers_info {
+  @include text-content;
+  &_text {
+    @extend %base-text;
+  }
+}
+
+.product-managers_info_list {
+  @include text-content;
+  &_item {
+    @extend %base-text;
+    &::before {
+      content: url(./image/icon_done.png);
+      margin: 10px 10px 0 0;
+    }
+  }
+}
+
+/* marketers section */
+.marketers {
+  @include section;
+}
+
+.marketers_info {
+  @include text-content;
+    &_subtitle {
+      @extend %sub-heading;
+    }
+    &_text {
+      @extend %base-text;
+    }
+}
+
+/* footer */
+
+hr {
+  margin: 80px 200px 80px 200px;
+}
+
+.footer_logo {
+  margin-left: 200px;
+}
+
+.footer_info {
+  @include section;
+  padding-left: 200px;
+  &_list {
+    @include text-content;
+    @extend %base-text;
+  }
+}
+
+.footer_info_data {
+  @include text-content;
+  &_input {
+    border: 1px solid #BCD0E5;
+    width: 325px;
+    height: 40px;
+  }
+  &_button {
+    @extend %buttons;
+    @extend %orange;
+    font-size: 20px;
+    height: 45px;
+    width: 180px;
+  }
+}
