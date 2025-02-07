@@ -1,0 +1,107 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: "Source Code Pro", serif;
+  border: #dcff02 dashed 8px;
+  font-weight: 400;
+  font-size: 60px;
+}
+
+img {
+  width: 50%;
+}
+
+p {
+  background-color: aqua;
+  color: black;
+  padding: 20px;
+}
+
+.first_card, .second_card {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 40px;
+  padding: 60px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-around;
+  padding: 60px;
+}
+
+.Yes, .No {
+  color: #c58fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  margin-bottom: 300px;
+}
+
+.crazy-shake {
+  animation: shake 0.5s infinite;
+  cursor: pointer;
+}
+
+/* Crazy Shake Animation */
+@keyframes shake {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+  10% {
+    transform: translate(-11px, 16px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-2px, -1px) rotate(10deg);
+  }
+  30% {
+    transform: translate(9px, 6px) rotate(-8deg);
+  }
+  40% {
+    transform: translate(7px, -14px) rotate(-9deg);
+  }
+  50% {
+    transform: translate(-15px, 17px) rotate(1deg);
+  }
+  60% {
+    transform: translate(5px, 0px) rotate(10deg);
+  }
+  70% {
+    transform: translate(-8px, 4px) rotate(-2deg);
+  }
+  80% {
+    transform: translate(5px, -12px) rotate(-6deg);
+  }
+  90% {
+    transform: translate(-10px, 1px) rotate(-4deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+}
+/* Stop shaking when hovered */
+.crazy-shake:hover {
+  animation: none;
+}
+
+.contact {
+  position: fixed;
+  bottom: 20px;
+  right: 80px;
+  width: 200px;
+  text-align: center;
+}
+
+.call {
+  font-size: 15px;
+  transition: width 1s, height 2s;
+}
+.call:hover {
+  transform: scale(1.5);
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0eWxlcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQVdBO0VBQ0k7RUFDQTtFQUNBLGFBZEU7RUFlRjtFQUNBO0VBQ0E7OztBQUdKO0VBQ0k7OztBQUdKO0VBQ0c7RUFDQTtFQUNBOzs7QUFHSDtFQTNCSTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7OztBQTBCSjtFQUNJO0VBQ0E7RUFDQTs7O0FBR0o7RUFDSTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7O0FBR0o7RUFDSTtFQUNBOzs7QUFHSjtBQUNBO0VBQ0k7SUFDSTs7RUFFSjtJQUNJOztFQUdKO0lBQ0k7O0VBR0o7SUFDSTs7RUFHSjtJQUNJOztFQUdKO0lBQ0k7O0VBR0o7SUFDSTs7RUFHSjtJQUNJOztFQUdKO0lBQ0k7O0VBR0o7SUFDSTs7RUFHSjtJQUNJOzs7QUFJUjtBQUNBO0VBQ0k7OztBQUtKO0VBQ0k7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7O0FBR0o7RUFDSTtFQUNBOztBQUNBO0VBQ0kiLCJmaWxlIjoic3R5bGVzLm1pbi5jc3MiLCJzb3VyY2VSb290IjoiIn0= */
