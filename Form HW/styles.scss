@@ -1,11 +1,12 @@
 //extensions
 
-%orange-button {
+%button {
     border: none;
     color: white;
-    background-color: #FF7F57;
     text-align: center;
     padding: 25px 50px;
+    height: 80px;
+    width: 400px;
     font-size: 18px;
     font-weight: 600;
     font-family: regular-font;
@@ -22,7 +23,6 @@
     font-size: 19px;
     line-height: 1.8;
 }  
-
 
 %bold-text {
     font-family: bold-font;
@@ -66,7 +66,6 @@
     src: url(./static/Montserrat-Italic.ttf);
 } 
 
-
 //mixins
 
 @mixin flex_row {
@@ -104,9 +103,10 @@
 }
 
 .welcome {
-    height: 740px;
+    //height: 740px;
     @include flex_row();
     background-color: #DCE2E6;
+    padding-bottom: 200px;
     &_content {
         @include flex_column();
         align-items: flex-start;
@@ -123,16 +123,24 @@
 }
 
 .orange {
-    @extend %orange-button;
+    @extend %button;
+    background-color: #FF7F57;
+    box-shadow: 20px 0px 50px rgba(124, 122, 122, 0.5);
 }
 
-.orange:hover, .orange:focus, .orange:active {
-    box-shadow: 20px 0px 50px rgba(124, 122, 122, 0.5);
+.blue {
+    @extend %button;
+    background-color: #2557AB;
+    box-shadow: 0px 20px 40px rgba(32, 32, 32, 0.5);
+}
+
+.orange:hover, .blue:hover, .orange:focus, .blue:focus, .orange:active, .blue:active {
+    box-shadow: 20px 20px 50px rgba(15, 14, 14, 0.5);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
 
-.Agency {
+.agency {
     height: 500px;
     margin-top: 150px;
     text-align: center;
@@ -190,7 +198,7 @@
 }
 
 .about {
-    height: 700px;
+    //height: 700px;
     @include flex_column();
     align-items: center;
     gap: 20px;
@@ -213,7 +221,63 @@
     }
      &_img {
          display: flex;
-         gap: 200px;
-         margin-top: 30px;
+         gap: 150px;
+         margin: 30px 0 80px 0;
      }
+}
+
+hr {
+    width: 80%;
+    color: #DCE2E6;
+    margin: 0 auto; 
+}
+
+.relax {
+    @include flex_row();
+    padding: 150px 0 100px 0;
+    &_content {
+        @include flex_column();
+        gap: 30px;
+        &_text:first-child {
+            @extend %bold-text;
+            font-size: 40px;
+        }
+        &_text:nth-child(2) {
+            @extend %regular-text;
+        }
+        &_text:nth-child(3), &_text:nth-child(4), &_text:nth-child(5) {
+            @extend %regular-text;
+            font-weight: 600;
+            font-size: 18px;
+            &::before {
+                content: url(./images/icon-tick.png);
+                margin: 10px 20px 0 0;
+            }
+
+        }
+    }
+    &_img {
+        transform: scale(1.5);
+    }
+}
+
+.start {
+    background-color: #FF7F57;
+    //text-align: center;
+    padding: 100px 0 100px 0;
+    display: grid;
+    place-items: center;
+    row-gap: 30px;
+    &_text {
+        @extend %regular-text;
+        color: #FFFFFF; 
+    }
+    &_heading {
+        @extend %bold-text;
+        color: #FFFFFF;
+    }
+}
+
+.contact {
+    background-color: #13253A;
 }

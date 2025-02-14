@@ -1,9 +1,10 @@
-.orange {
+.blue, .orange {
   border: none;
   color: white;
-  background-color: #FF7F57;
   text-align: center;
   padding: 25px 50px;
+  height: 80px;
+  width: 400px;
   font-size: 18px;
   font-weight: 600;
   font-family: regular-font;
@@ -12,14 +13,14 @@
   box-shadow: 20px 0px 40px rgba(124, 122, 122, 0.5);
 }
 
-.about_content, .numbers_content_column_item:first-child, .Agency_content_column > p:nth-child(3), .Agency_header, .welcome_content_text:nth-child(3) {
+.start_text, .relax_content_text:nth-child(3), .relax_content_text:nth-child(4), .relax_content_text:nth-child(5), .relax_content_text:nth-child(2), .about_content, .numbers_content_column_item:first-child, .agency_content_column > p:nth-child(3), .agency_header, .welcome_content_text:nth-child(3) {
   color: #13253A;
   font-family: regular-font;
   font-size: 19px;
   line-height: 1.8;
 }
 
-.about_header:nth-child(2), .Agency_content_column > p:nth-child(2), .welcome_content_text:nth-child(2) {
+.start_heading, .relax_content_text:first-child, .about_header:nth-child(2), .agency_content_column > p:nth-child(2), .welcome_content_text:nth-child(2) {
   font-family: bold-font;
   font-size: 56px;
   color: #13253A;
@@ -32,7 +33,7 @@
   font-size: 16px;
 }
 
-.about_header:first-child, .numbers_content_column_item:nth-child(2), .Agency_text, .welcome_content_text:first-child {
+.about_header:first-child, .numbers_content_column_item:nth-child(2), .agency_text, .welcome_content_text:first-child {
   color: #2557AB;
   font-family: regular-font;
   font-size: 18px;
@@ -82,11 +83,11 @@
 }
 
 .welcome {
-  height: 740px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
   background-color: #DCE2E6;
+  padding-bottom: 200px;
 }
 .welcome_content {
   display: flex;
@@ -96,29 +97,39 @@
   padding-top: 60px;
   align-items: flex-start;
 }
-.orange:hover, .orange:focus, .orange:active {
+.orange {
+  background-color: #FF7F57;
   box-shadow: 20px 0px 50px rgba(124, 122, 122, 0.5);
+}
+
+.blue {
+  background-color: #2557AB;
+  box-shadow: 0px 20px 40px rgba(32, 32, 32, 0.5);
+}
+
+.orange:hover, .blue:hover, .orange:focus, .blue:focus, .orange:active, .blue:active {
+  box-shadow: 20px 20px 50px rgba(15, 14, 14, 0.5);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
 
-.Agency {
+.agency {
   height: 500px;
   margin-top: 150px;
   text-align: center;
 }
-.Agency_header {
+.agency_header {
   font-size: 40px;
   font-weight: 500;
 }
-.Agency_content {
+.agency_content {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
   justify-content: center;
   gap: 40px;
 }
-.Agency_content_column {
+.agency_content_column {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -127,11 +138,11 @@
   align-items: center;
   gap: 20px;
 }
-.Agency_content_column > p:nth-child(2) {
+.agency_content_column > p:nth-child(2) {
   font-size: 22px;
   color: #3B4D6C;
 }
-.Agency_content_column > img {
+.agency_content_column > img {
   height: 64px;
   width: 64px;
 }
@@ -155,7 +166,6 @@
   color: #FF7F57;
 }
 .about {
-  height: 700px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -175,8 +185,61 @@
 }
 .about_img {
   display: flex;
-  gap: 200px;
-  margin-top: 30px;
+  gap: 150px;
+  margin: 30px 0 80px 0;
+}
+
+hr {
+  width: 80%;
+  color: #DCE2E6;
+  margin: 0 auto;
+}
+
+.relax {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  padding: 150px 0 100px 0;
+}
+.relax_content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 60px;
+  gap: 30px;
+}
+.relax_content_text:first-child {
+  font-size: 40px;
+}
+.relax_content_text:nth-child(3), .relax_content_text:nth-child(4), .relax_content_text:nth-child(5) {
+  font-weight: 600;
+  font-size: 18px;
+}
+.relax_content_text:nth-child(3)::before, .relax_content_text:nth-child(4)::before, .relax_content_text:nth-child(5)::before {
+  content: url(./images/icon-tick.png);
+  margin: 10px 20px 0 0;
+}
+.relax_img {
+  transform: scale(1.5);
+}
+
+.start {
+  background-color: #FF7F57;
+  padding: 100px 0 100px 0;
+  display: grid;
+  place-items: center;
+  row-gap: 30px;
+}
+.start_text {
+  color: #FFFFFF;
+}
+.start_heading {
+  color: #FFFFFF;
+}
+
+.contact {
+  background-color: #13253A;
 }
 
 /*# sourceMappingURL=output.css.map */
