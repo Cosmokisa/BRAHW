@@ -1,0 +1,116 @@
+.header__nav-item {
+  color: #000000;
+  font-family: "Mulish", serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.description__content-text {
+  color: #4A4FF2;
+  font-family: "Mulish", serif;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.service__list__header, .description__content-header {
+  color: #000000;
+  font-family: "Mulish", serif;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.service__list__item, .description__quote {
+  color: #111111;
+  font-family: "Mulish", serif;
+  font-size: 18px;
+  opacity: 60%;
+  line-height: 1.8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 8rem;
+}
+.header__nav-list {
+  display: flex;
+  gap: 3rem;
+}
+.header__nav-item {
+  list-style: none;
+  text-decoration: none;
+}
+
+.description {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+.description__content-text {
+  padding-bottom: 3rem;
+}
+.description__content-header > span {
+  color: #4A4FF2;
+}
+.description__quote {
+  font-style: italic;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  margin-top: 8rem;
+}
+.gallery__projects {
+  column-count: 3; /* Strict 3-column layout */
+  column-gap: 2rem; /* Maintain equal spacing */
+  width: 80vw;
+}
+.gallery__projects__item {
+  display: inline-block; /* Ensures items respect column layout */
+  width: 100%; /* Makes images fit the column width */
+  margin-bottom: 2rem;
+}
+.gallery__projects__item img {
+  width: 100%;
+  height: auto; /* Keeps original height */
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .projects {
+    column-count: 2; /* 2 columns for tablets */
+  }
+}
+@media (max-width: 480px) {
+  .projects {
+    column-count: 1; /* 1 column for mobile */
+  }
+}
+.service {
+  display: flex;
+  justify-content: center;
+  padding-top: 8rem;
+}
+.service__list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5rem;
+}
+.service__list__header {
+  font-size: 28px;
+  grid-column: 1/span 3;
+}
+
+/*# sourceMappingURL=output.css.map */

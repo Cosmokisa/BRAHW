@@ -1,0 +1,185 @@
+$black: #000000;
+$blue: #4A4FF2;
+$grey: #111111;
+
+%regular-text {
+  color: $black;
+  font-family: "Mulish", serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+%blue-text {
+  color: $blue;
+  font-family: "Mulish", serif;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+%header-text {
+  color: $black;
+  font-family: "Mulish", serif;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+%grey-text {
+  color: $grey;
+  font-family: "Mulish", serif;
+  font-size: 18px;
+  opacity: 60%;
+  line-height: 1.8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 8rem;
+  &__nav-list{
+    display: flex;
+    gap: 3rem;
+  }
+  &__nav-item{
+    list-style: none;
+    text-decoration: none;
+    @extend %regular-text;
+  }
+}
+
+.description {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  &__content-text{
+    @extend %blue-text;
+    padding-bottom: 3rem;
+  }
+  &__content-header {
+    @extend %header-text;
+    & > span{
+      color: $blue;
+    }
+  }
+  &__quote {
+    @extend %grey-text;
+    font-style: italic;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+  }
+}
+
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  margin-top: 8rem;
+  &__projects {
+    column-count: 3; /* Strict 3-column layout */
+    column-gap: 2rem; /* Maintain equal spacing */
+    width: 80vw;
+    &__item{
+      display: inline-block; /* Ensures items respect column layout */
+      width: 100%; /* Makes images fit the column width */
+      margin-bottom: 2rem;
+    }
+    &__item img {
+      width: 100%;
+      height: auto; /* Keeps original height */
+      display: block;
+    }
+  }
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .projects {
+    column-count: 2; /* 2 columns for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .projects {
+    column-count: 1; /* 1 column for mobile */
+  }
+}
+
+.service {
+  display: flex;
+  justify-content: center;
+  padding-top: 8rem;
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5rem;
+    &__item {
+       @extend %grey-text;
+    }
+    &__header{
+       @extend %header-text;
+       font-size: 28px;
+       grid-column: 1 / span 3;
+    }
+  }
+}
+
+//.gallery__projects {
+//  display: grid;
+//  grid-template-columns: repeat(3, 350px);
+//  grid-auto-rows: 10px;
+//  column-gap: 20px;
+//  justify-content: center;
+//  padding-top: 8rem;
+//  &__item {
+//    width: 100%;
+//    object-fit: cover;
+//  }
+//  //Dynamically calculate row span based on image height
+//  &__item:nth-child(1) {
+//    grid-row-end: span 43;
+//  }
+//  &__item:nth-child(2) {
+//    grid-row-end: span 37;
+//  }
+//  &__item:nth-child(3) {
+//    grid-row-end: span 62;
+//  }
+//  &__item:nth-child(4) {
+//    grid-row-end: span 50;
+//  }
+//  &__item:nth-child(5) {
+//    grid-row-end: span 43;
+//  }
+//  &__item:nth-child(6) {
+//    grid-row-end: span 43;
+//  }
+//  &___item:nth-child(7) {
+//    grid-row-end: span 50;
+//  }
+//  &__item:nth-child(8) {
+//    grid-row-end: span 55;
+//  }
+//  &__item:nth-child(9) {
+//    grid-row-end: span 56;
+//  }
+//  &__item:nth-child(10) {
+//    grid-row-end: span 56;
+//  }
+//  &___item:nth-child(11) {
+//    grid-row-end: span 62;
+//  }
+//  &__item:nth-child(12) {
+//    grid-row-end: span 37;
+//  }
+//}
+
+
+
