@@ -1,4 +1,4 @@
-.header__nav-item {
+.footer__nav-item, .awards__category, .header__nav-item {
   color: #000000;
   font-family: "Mulish", serif;
   font-size: 18px;
@@ -12,19 +12,24 @@
   font-weight: 700;
 }
 
-.service__list__header, .description__content-header {
+.awards__title, .service__list__header, .description__content-header {
   color: #000000;
   font-family: "Mulish", serif;
   font-size: 40px;
   font-weight: 700;
 }
 
-.service__list__item, .description__quote {
+.awards__name, .service__list__item, .description__quote {
   color: #111111;
   font-family: "Mulish", serif;
   font-size: 18px;
   opacity: 60%;
   line-height: 1.8;
+}
+
+.awards__item:nth-child(3), .awards__item:nth-child(7), .awards__year {
+  font-family: "Mulish", serif;
+  font-size: 18px;
 }
 
 * {
@@ -111,6 +116,50 @@
 .service__list__header {
   font-size: 28px;
   grid-column: 1/span 3;
+}
+
+.awards__item {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  justify-items: start;
+  align-items: start;
+  gap: 2rem;
+}
+.awards__title {
+  font-size: 22px;
+  grid-column: 1/3;
+  grid-row: 1/3;
+}
+.awards__category {
+  grid-column: 3/4;
+}
+.awards__name {
+  grid-column: 4/5;
+}
+.awards__year {
+  grid-column: 5/6;
+  align-self: start;
+}
+hr {
+  width: 80vw;
+  background-color: #ddd;
+  margin: 20px auto;
+}
+
+.footer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 8rem;
+}
+.footer__nav-list {
+  display: flex;
+  gap: 3rem;
+}
+.footer__nav-item {
+  list-style: none;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=output.css.map */
