@@ -1,11 +1,37 @@
+// Color variations
 $black: #000000;
 $dark-grey: #333333;
 $light-grey: #D6D6D6;
 $white: #FFFFFF;
-$font-stack:"Ubuntu", serif;
+
+// Font families
+$font-primary: "Rubik", serif;
+$font-secondary:"Ubuntu", serif;
+
+// Font sizes
+$font-size-xs: 0.875rem; // 14px
+$font-size-sm: 1.25rem; // 20px
+$font-size-md: 2.5rem;  // 40px
+$font-size-lg: 3.375rem; // 54px
+$font-size-xl: 4.625rem;  // 74px
+
+// Additional Font Sizes
+$font-size-2xl: 1.125rem; // 18px
+$font-size-3xl: 1.5rem;  // 24px
+$font-size-4xl: 1.75rem; // 28px
+$font-size-5xl: 2.25rem; // 36px
+$font-size-6xl: 2.875rem; // 46px
+$font-size-7xl: 4rem;  // 64px
+
+// Font weights
+$font-weight-thin: 300;       // Thin
+$font-weight-normal: 400;     // Normal
+$font-weight-medium: 500;      // Medium
+$font-weight-semibold: 600;    // Semi-Bold
+$font-weight-bold: 700;        // Bold
 
 %text {
-  font-family: $font-stack;
+  font-family: $font-secondary;
   font-size: 22px;
   font-weight: 300;
 }
@@ -18,6 +44,12 @@ $font-stack:"Ubuntu", serif;
   box-sizing: border-box;
 }
 
+body {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-family: $font-primary;
+}
+
 // Hide the checkbox
 #sidebar {
   display: none;
@@ -28,7 +60,7 @@ $font-stack:"Ubuntu", serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
+  padding-top: 2rem;
   &__nav {
     align-items: center;
     &-list {
@@ -50,7 +82,7 @@ $font-stack:"Ubuntu", serif;
 }
 
 // Styles for tablet and mobile versions
-@media (max-width: 769px) {
+@media (max-width: 768px) {
   .header {
     position: relative;
     &__nav {
@@ -105,5 +137,42 @@ $font-stack:"Ubuntu", serif;
     display: none;
  }
 
+// Main section styles
 
+.main {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 5rem;
+  padding-top: 5rem;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    &-img {
+      height: 39px;
+      width: 147px;
+    }
+    &-title {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-normal;
+    }
+    &-description {
+      font-size: $font-size-md;
+      font-weight: $font-weight-normal;
+    }
+    &-bio {
+      font-size: $font-size-3xl;
+      font-weight: $font-weight-normal;
+    }
+  }
+}
 
+@media (max-width: 768px) {
+  .main {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+}
