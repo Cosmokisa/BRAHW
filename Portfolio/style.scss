@@ -8,20 +8,20 @@ $white: #FFFFFF;
 $font-primary: "Rubik", serif;
 $font-secondary:"Ubuntu", serif;
 
-// Font sizes
-$font-size-xs: 0.875rem; // 14px
-$font-size-sm: 1.25rem; // 20px
-$font-size-md: 2.5rem;  // 40px
-$font-size-lg: 3.375rem; // 54px
-$font-size-xl: 4.625rem;  // 74px
+// Responsive font sizes - Decreasing for smaller screen sizes
+$font-size-2x1: clamp(0.875rem, calc(1vw + 0.5rem), 1rem);      // 14px → 18px
+$font-size-xs: clamp(1rem, calc(1.2vw + 0.5rem), 1.125rem);    // 18px → 20px
+$font-size-3xl: clamp(1.125rem, calc(1vw + 0.5rem), 1.25rem);  // 20px → 24px
+$font-size-sm: clamp(1.25rem, calc(1.5vw + 0.5rem), 1.5rem);  // 24px → 28px
+$font-size-4xl: clamp(1.5rem, calc(1.5vw + 0.75rem), 1.75rem); // 28px → 36px
+$font-size-md: clamp(1.75rem, calc(2vw + 0.75rem), 2.25rem);  // 36px → 40px
+$font-size-5x1: clamp(2rem, calc(2vw + 1rem), 2.5rem);          // 40px → 46px
+$font-size-lg: clamp(2.25rem, calc(2.5vw + 1rem), 2.875rem);  // 46px → 54px
+$font-size-6x1: clamp(2.875rem, calc(2.5vw + 1rem), 3.375rem);  // 54px → 64px
+$font-size-xl: clamp(3.375rem, calc(3vw + 1rem), 4rem);       // 64px → 74px
 
-// Additional Font Sizes
-$font-size-2xl: 1.125rem; // 18px
-$font-size-3xl: 1.5rem;  // 24px
-$font-size-4xl: 1.75rem; // 28px
-$font-size-5xl: 2.25rem; // 36px
-$font-size-6xl: 2.875rem; // 46px
-$font-size-7xl: 4rem;  // 64px
+//clamp insures that the screen will have minimum, prefer and max size font
+//calc will make the font scalable
 
 // Font weights
 $font-weight-thin: 300;       // Thin
@@ -30,10 +30,10 @@ $font-weight-medium: 500;      // Medium
 $font-weight-semibold: 600;    // Semi-Bold
 $font-weight-bold: 700;        // Bold
 
-%text {
+%nav-text {
   font-family: $font-secondary;
-  font-size: 22px;
-  font-weight: 300;
+  font-size: $font-size-md;
+  font-weight: $font-weight-thin;
 }
 
 // Global settings
@@ -45,8 +45,8 @@ $font-weight-bold: 700;        // Bold
 }
 
 body {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding: min(5em, 8%);
+  // This will calculate which of this values is smaller, and the padding will be smaller as the screen gets smaller
   font-family: $font-primary;
 }
 
@@ -72,7 +72,7 @@ body {
     }
     &-link {
       text-decoration: none;
-      @extend %text;
+      @extend %nav-text;
       color: $black;
     }
     &-close, &-open {
@@ -82,7 +82,7 @@ body {
 }
 
 // Styles for tablet and mobile versions
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   .header {
     position: relative;
     &__nav {
@@ -118,7 +118,7 @@ body {
     .header__nav-open {
       display: block;
       position: absolute;
-      right: 3rem;
+      right: 1rem;
       cursor: pointer;
     }
     &__logo {
@@ -142,7 +142,7 @@ body {
 .main {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
   gap: 5rem;
   padding-top: 5rem;
@@ -169,10 +169,77 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   .main {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+  }
+}
+
+// Scroll bar styles
+
+.scroll {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding-top: 3rem;
+  &__links {
+    grid-column: 1;
+    justify-self: start;
+    display: flex;
+    gap: 2rem;
+  }
+  &__btn {
+    grid-column: 2;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: $font-size-2x1;
+  }
+}
+//Makes scroll bar disappear and changes links container
+@media (max-width: 769px) {
+  .scroll {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    &__btn {
+      display: none;
+    }
+  }
+}
+
+// Video section styles
+.video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+  gap: 2rem;
+  &__text {
+    font-size: $font-size-4xl;
+    font-weight: $font-weight-normal;
+  }
+  &__container {
+    width: 1262px;
+    height: 710px;
+  }
+}
+
+//Video changes size on different screen sizes but I used aspect ratio calculator so it to look good on dif devices
+@media (max-width: 769px) {
+  .video__container {
+    width: 728px;
+    height: 546px;
+  }
+}
+
+@media (max-width: 320px) {
+  .video__container {
+    width: 288px;
+    height: 162px;
   }
 }
