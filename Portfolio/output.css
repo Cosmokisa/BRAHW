@@ -1,0 +1,92 @@
+.header__nav-link {
+  font-family: "Ubuntu", serif;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#sidebar {
+  display: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+.header__nav {
+  align-items: center;
+}
+.header__nav-list {
+  display: flex;
+  gap: 3rem;
+}
+.header__nav-item {
+  list-style: none;
+}
+.header__nav-link {
+  text-decoration: none;
+  color: #000000;
+}
+.header__nav-close, .header__nav-open {
+  display: none;
+}
+
+@media (max-width: 769px) {
+  .header {
+    position: relative;
+  }
+  .header__nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 65vw;
+    height: 100vh;
+    background-color: #333333;
+    z-index: 10;
+    display: flex;
+    align-items: flex-start;
+    padding: 2rem;
+    transition: right 0.75s ease-out;
+  }
+  .header__nav-list {
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+    padding: 1rem;
+  }
+  .header__nav-link {
+    color: #FFFFFF;
+  }
+  .header__nav-close {
+    display: block;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
+  }
+  .header .header__nav-open {
+    display: block;
+    position: absolute;
+    right: 3rem;
+    cursor: pointer;
+  }
+  .header__logo {
+    content: url("./images/svg/logo_small.svg");
+  }
+}
+#sidebar:checked ~ .header__nav {
+  right: 0;
+}
+
+#sidebar:checked ~ .header__nav-open {
+  display: none;
+}
+
+/*# sourceMappingURL=output.css.map */

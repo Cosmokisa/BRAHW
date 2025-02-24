@@ -1,0 +1,109 @@
+$black: #000000;
+$dark-grey: #333333;
+$light-grey: #D6D6D6;
+$white: #FFFFFF;
+$font-stack:"Ubuntu", serif;
+
+%text {
+  font-family: $font-stack;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+// Global settings
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Hide the checkbox
+#sidebar {
+  display: none;
+}
+
+// Default navigation styles
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  &__nav {
+    align-items: center;
+    &-list {
+      display: flex;
+      gap: 3rem;
+    }
+    &-item {
+      list-style: none;
+    }
+    &-link {
+      text-decoration: none;
+      @extend %text;
+      color: $black;
+    }
+    &-close, &-open {
+      display: none; // Visible in tablet and mobile versions only
+    }
+  }
+}
+
+// Styles for tablet and mobile versions
+@media (max-width: 769px) {
+  .header {
+    position: relative;
+    &__nav {
+      position: fixed;  // Navbar stays even if page is scrolled
+      top: 0;
+      right: -100%; // Hides the sidebar
+      width: 65vw;
+      height: 100vh;
+      background-color: $dark-grey;
+      z-index: 10;
+      display: flex;
+      align-items: flex-start;
+      padding: 2rem;
+      transition: right 0.75s ease-out;
+      &-list {
+        flex-direction: column;
+        width: 100%;
+        gap: 2rem;
+        padding: 1rem;
+      }
+      &-link {
+        color: $white;
+      }
+      &-close {
+        display: block;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        cursor: pointer;
+      }
+    }
+    // Show the menu icon
+    .header__nav-open {
+      display: block;
+      position: absolute;
+      right: 3rem;
+      cursor: pointer;
+    }
+    &__logo {
+      content: url("./images/svg/logo_small.svg");
+    }
+  }
+}
+
+// Checkbox checked - moves sidebar into view
+ #sidebar:checked ~ .header__nav {
+    right: 0;
+ }
+
+//  Hides open button when sidebar is visible
+ #sidebar:checked ~ .header__nav-open {
+    display: none;
+ }
+
+
+
