@@ -306,8 +306,58 @@ body {
   }
 }
 
+//Portfolio styles
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 0;
+  gap: 3rem;
+  &__title {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-medium;
+  }
+  &__text {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-size: $font-size-2x1;
+  }
+  &__text > span:not(:first-child):before {
+    content: url("./images/svg/line.svg");
+    padding-right: 1rem;
+  }
+  &__content {
+    column-count: 3; /* Strict 3-column layout */
+    column-gap: 10px; /* Maintain equal spacing */
+    //width: 80vw;
 
+    &-item {
+      display: inline-block; /* Ensures items respect column layout */
+      width: 100%; /* Makes images fit the column width */
+      margin-bottom: 10px; /* Same gap as column-gap */
+    }
+  }
+}
 
+@media (max-width: 769px) {
+  .portfolio__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .portfolio__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .portfolio__text > span:before {
+    content: url("./images/svg/line.svg");
+    padding-right: 1rem;
+  }
+}
 
 
 

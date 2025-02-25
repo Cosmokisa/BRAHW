@@ -250,5 +250,52 @@ body {
     width: 95vw;
   }
 }
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 0;
+  gap: 3rem;
+}
+.portfolio__title {
+  font-size: clamp(2.25rem, 2.5vw + 1rem, 2.875rem);
+  font-weight: 500;
+}
+.portfolio__text {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: clamp(0.875rem, 1vw + 0.5rem, 1rem);
+}
+.portfolio__text > span:not(:first-child):before {
+  content: url("./images/svg/line.svg");
+  padding-right: 1rem;
+}
+.portfolio__content {
+  column-count: 3; /* Strict 3-column layout */
+  column-gap: 10px; /* Maintain equal spacing */
+}
+.portfolio__content-item {
+  display: inline-block; /* Ensures items respect column layout */
+  width: 100%; /* Makes images fit the column width */
+  margin-bottom: 10px; /* Same gap as column-gap */
+}
+
+@media (max-width: 769px) {
+  .portfolio__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .portfolio__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .portfolio__text > span:before {
+    content: url("./images/svg/line.svg");
+    padding-right: 1rem;
+  }
+}
 
 /*# sourceMappingURL=output.css.map */
