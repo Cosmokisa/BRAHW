@@ -367,7 +367,6 @@ body {
   &__title {
     font-size: $font-size-lg;
     font-weight: $font-weight-medium;
-    color: $dark-grey;
   }
   &__content {
     display: flex;
@@ -389,7 +388,6 @@ body {
   &__phrase-item:nth-child(2) {
     font-size: $font-size-4xl;
     font-weight: $font-weight-normal;
-    color: $dark-grey;
   }
   &__phrase-item:nth-child(3) {
     align-self: flex-end;
@@ -397,12 +395,10 @@ body {
   &__signature-item:first-child {
     font-size: $font-size-sm;
     font-weight: $font-weight-medium;
-    color: $dark-grey;
   }
   &__signature-item:nth-child(2) {
     font-size: $font-size-xs;
     font-weight: $font-weight-normal;
-    color: $dark-grey;
     padding-bottom: 5rem;
   }
   }
@@ -424,14 +420,172 @@ body {
   }
 }
 
+//Numbers section styles
+.numbers {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  align-items: stretch; // Ensures all columns take the same height
+  margin: 0 auto; //Center the grid content
+  width: 70vw;
+  gap: 2rem;
+  padding: 10rem 0;
+  background: url("./images/svg/background.svg") no-repeat center ;
+  background-size: contain;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; // Forces content items to match their parent's height
+    gap: 1rem;
+  }
+  &__content-item:first-child {
+    font-size: $font-size-6x1;
+    font-weight: $font-weight-normal;
+  }
+  &__content-item:nth-child(2) {
+    font-size: $font-size-3xl;
+    font-weight: $font-weight-normal;
+  }
+}
 
+@media (max-width: 400px) {
+  .numbers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;//Remove the background img
+  }
+}
 
+@media (max-width: 769px) {
+  .numbers {
+    width: 100%;
+    gap: 1rem;
+    padding: 3rem 0;
+    &__content-item:first-child {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-normal;
+    }
+    &__content-item:nth-child(2) {
+      font-size: $font-size-2x1;
+      font-weight: $font-weight-normal;
+    }
+  }
+}
 
+// Styles for contact section
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 0;
+  gap: 3rem;
+  &__title {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-medium;
+  }
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 5rem;
+    gap: 5rem;
+    width: 70vw;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    position: relative;
+    &-text {
+      font-size: $font-size-md;
+      font-weight: $font-weight-thin;
+    }
+    &-data {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    &-data-item {
+      font-size: $font-size-xs;
+      font-weight: $font-weight-thin;
+    }
+    &-data > p:before {
+      content: url("./images/svg/line.svg");
+      padding-right: 1rem;
+    }
+  }
+  &__form {
+    background-color: $dark-grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    gap: 1rem;
+    width: 90%;
+    &-label {
+      display: block; /* Ensures labels take full width */
+      width: 100%;
+      margin-bottom: 10px; /* Adds spacing between inputs */
+    }
+    &-input {
+      background-color: $dark-grey;
+      border: none;
+      border-bottom: 1px solid $white;
+      font-size: $font-size-2x1;
+      font-weight: $font-weight-normal;
+      color: $white;
+      padding-top: 3rem;
+      width: 100%; /* Makes inputs full-width */
+    }
+    &-input::placeholder  {
+      color: $white;
+      opacity: 1; /* Ensures full visibility in some browsers */
+    }
+    &-btn {
+      background-color: $white;
+      font-size: $font-size-2x1;
+      font-weight: $font-weight-thin;
+      padding: 16px 40px;
+      align-self: flex-end;
+      cursor: pointer;
+    }
+  }
+}
 
+@media (max-width: 1440px) {
+  .contact__content {
+    width: 100vw;
+  }
+}
 
+@media (max-width: 769px) {
+  .contact__content {
+    display: flex;
+    flex-direction: column;
+  }
 
+  .contact__form {
+    width: 100%;
+  }
 
+  .contact__info-data {
+    position: static;
+  }
+}
 
+@media (max-width: 400px) {
+  .contact__content {
+    padding: 1rem;
+  }
+
+  .contact__form {
+    padding: 1rem;
+  }
+}
 
 
 
