@@ -200,6 +200,35 @@
         </picture>
     </div>
 </section>
+<section class="testimonials" id="testimonials">
+    <h2 class="testimonials__title">Client Testimonial</h2>
+    <div class="testimonials__content">
+        <picture class="testimonials__picture">
+            <!--up to 320px-->
+            <source media="(max-width: 320px)" srcset="./images/mobile_images/client.png">
+
+            <!--401px to 768px-->
+            <source media="(min-width: 321px) and (max-width: 768px)" srcset="./images/tablet_images/client.png">
+
+            <!--769px to 1440px-->
+            <source media="(min-width: 769px) and (max-width: 1440px)" srcset="./images/desktop_images/client.png">
+
+            <!--default/above 1441px-->
+            <img src="./images/desktop_images/client.png" alt="art">
+        </picture>
+        <div class="testimonials__quote">
+            <div class="testimonials__phrase">
+                <img class="testimonials__phrase-item" src="./images/svg/Quote_right.svg" alt="quote icon">
+              <p class="testimonials__phrase-item">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete</p>
+                <img class="testimonials__phrase-item" src="./images/svg/Quote_left.svg" alt="quote icon">
+            </div>
+            <div class="testimonials__signature">
+                <p class="testimonials__signature-item">Jared Warner</p>
+                <p class="testimonials__signature-item">CEO Of Zeo</p>
+            </div>
+        </div>
+    </div>
+</section>
 <!--Don't forget to make images as a "a" in skills section and in scroll section-->
 <!--Need to make :before element to be centered vertically-->
 </body>
