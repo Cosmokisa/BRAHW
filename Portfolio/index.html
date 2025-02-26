@@ -61,19 +61,18 @@
 </main>
 <section class="scroll">
     <div class="scroll__links">
-    <!--Don't forget to add "a" to the links and id to the btn-->
-    <img class="scroll__links-item" src="./images/svg/facebook.svg" alt="Facebook link">
-    <img class="scroll__links-item" src="./images/svg/linkedin.svg" alt="Linkedin link">
-    <img class="scroll__links-item" src="./images/svg/behance.svg" alt="Behance link">
-    <img class="scroll__links-item" src="./images/svg/twitter.svg" alt="Twitter link">
-    <img class="scroll__links-item" src="./images/svg/dribbble.svg" alt="Dribble link">
+        <a class="scroll__links-item" href="https://www.facebook.com"><img class="scroll__links-img" src="./images/svg/facebook.svg" alt="Facebook link"></a>
+        <a class="scroll__links-item" href="https://www.linkedin.com"><img class="scroll__links-img" src="./images/svg/linkedin.svg" alt="Linkedin link"></a>
+        <a class="scroll__links-item" href="https://www.behance.net"><img class="scroll__links-img" src="./images/svg/behance.svg" alt="Behance link"></a>
+        <a class="scroll__links-item" href="https://x.com"><img class="scroll__links-img" src="./images/svg/twitter.svg" alt="Twitter link"></a>
+        <a class="scroll__links-item" href=""><img class="scroll__links-img" src="./images/svg/dribbble.svg" alt="Dribble link"></a>
     </div>
     <div class="scroll__btn">
-        <p class="scroll__btn-item">SCROLL</p>
+        <a class="scroll__btn-link" href="#video">SCROLL</a>
         <img class="scroll__btn-item" src="./images/svg/down.svg" alt="scroll down" height="32px" width="32px">
     </div>
 </section>
-<section class="video">
+<section class="video" id="video">
     <p class="video__text">Learn all about me in 60 seconds.</p>
     <div class="video__container">
     <!--Ensure that video will be custom size-->
@@ -114,11 +113,6 @@
     <p class="portfolio__text">
         <span><b>All</b></span><span>UI & UX</span><span>Graphic Design</span><span>Web Development</span>
     </p>
-<!--    <p class="portfolio__text">-->
-<!--        <b>All</b> <span class="portfolio__title-separator">-</span> UI & UX-->
-<!--        <span class="portfolio__title-separator">-</span> Graphic Design-->
-<!--        <span class="portfolio__title-separator">-</span> Web Development-->
-<!--    </p>-->
     <div class="portfolio__content">
         <picture>
             <!--up to 320px-->
@@ -267,8 +261,16 @@
         </form>
     </div>
 </section>
-<!--Don't forget to make images as a "a" in skills section and in scroll section-->
+<footer class="footer">
+    <p class="footer__text">© 2020 Ozart Portfolio Template</p>
+    <div class="footer__links">
+        <a class="footer__links-item" href="https://www.facebook.com"><img class="footer__links-img" src="./images/svg/facebook.svg" alt="Facebook link"></a>
+        <a class="footer__links-item" href="https://www.linkedin.com"><img class="footer__links-img" src="./images/svg/linkedin.svg" alt="Linkedin link"></a>
+        <a class="footer__links-item" href="https://www.behance.net"><img class="footer__links-img" src="./images/svg/behance.svg" alt="Behance link"></a>
+        <a class="footer__links-item" href="https://x.com"><img class="footer__links-img" src="./images/svg/twitter.svg" alt="Twitter link"></a>
+        <a class="footer__links-item" href=""><img class="footer__links-img" src="./images/svg/dribbble.svg" alt="Dribble link"></a>
+    </div>
+</footer>
 <!--Need to make :before element to be centered vertically-->
-<!--to make all the font dark grey-->
 </body>
 </html>

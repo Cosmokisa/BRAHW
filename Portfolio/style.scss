@@ -48,6 +48,7 @@ body {
   padding: min(5em, 8%);
   // This will calculate which of this values is smaller, and the padding will be smaller as the screen gets smaller
   font-family: $font-primary;
+  color: $dark-grey;
 }
 
 // Hide the checkbox
@@ -197,7 +198,13 @@ body {
     flex-direction: column;
     align-items: center;
     font-size: $font-size-2x1;
+    font-weight: $font-weight-thin;
+    &-link {
+      text-decoration: none;
+      color: inherit; /* Keeps text color same as surrounding text */
+    }
   }
+
 }
 //Makes scroll bar disappear and changes links container
 @media (max-width: 769px) {
@@ -216,7 +223,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 10rem;
+  padding-top: 12rem;
   padding-bottom: 5rem;
   gap: 2rem;
   &__text {
@@ -237,11 +244,15 @@ body {
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 400px) {
   .video__container {
     width: 288px;
     height: 162px;
   }
+  .video {
+    padding-top: 5rem;
+  }
+
 }
 
 // Skills section styles
@@ -249,7 +260,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5rem 0;
+  padding: 10rem 0;
   gap: 3rem;
   &__title {
     font-size: $font-size-6x1;
@@ -306,6 +317,12 @@ body {
   }
 }
 
+@media (max-width: 400px) {
+  .skills {
+    padding: 3rem 0;
+  }
+}
+
 //Portfolio styles
 .portfolio {
   display: flex;
@@ -346,6 +363,7 @@ body {
   }
 
   .portfolio__text {
+    align-self: flex-start;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -417,6 +435,12 @@ body {
   }
   .testimonials__signature {
     padding-top: 3rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .testimonials {
+    padding: 3rem 0;
   }
 }
 
@@ -588,11 +612,31 @@ body {
 }
 
 
+//Footer styles
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  &__links {
+    display: flex;
+    gap: 4rem;
+  }
+}
 
+@media (max-width: 769px) {
+  .footer {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 1rem;
+  }
+}
 
-
-
-
+@media (max-width: 400px) {
+  .footer__links {
+    gap: 2rem;
+  }
+}
 
 
 
