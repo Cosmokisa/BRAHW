@@ -35,9 +35,9 @@
         </label>
 
         <ul class="header__nav-list">
-            <li class="header__nav-item"><a class="header__nav-link" href="#portfolio">Portfolio</a></li>
-            <li class="header__nav-item"><a class="header__nav-link" href="#testimonials">Testimonials</a></li>
-            <li class="header__nav-item"><a class="header__nav-link" href="#contact">Contact</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="#portfolio_section">Portfolio</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="#testimonials_section">Testimonials</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="#contact_section">Contact</a></li>
         </ul>
     </nav>
 </header>
@@ -68,11 +68,11 @@
         <a class="scroll__links-item" href=""><img class="scroll__links-img" src="./images/svg/dribbble.svg" alt="Dribble link"></a>
     </div>
     <div class="scroll__btn">
-        <a class="scroll__btn-link" href="#video">SCROLL</a>
+        <a class="scroll__btn-link" href="#video_section">SCROLL</a>
         <img class="scroll__btn-item" src="./images/svg/down.svg" alt="scroll down" height="32px" width="32px">
     </div>
 </section>
-<section class="video" id="video">
+<section class="video" id="video_section">
     <p class="video__text">Learn all about me in 60 seconds.</p>
     <div class="video__container">
     <!--Ensure that video will be custom size-->
@@ -83,7 +83,7 @@
     <h3 class="skills__title">What I Do</h3>
     <div class="skills__list">
         <div class="skills__item">
-            <h4 class="skills__item-title">Ui & UX Design</h4>
+            <h4 class="skills__item-title">UI & UX Design</h4>
             <p class="skills__item-text">User interface design, user experience design, user research.</p>
             <div class="skills__item-action">
                 <p class="skills__item-more">Read more</p>
@@ -108,11 +108,14 @@
         </div>
     </div>
 </section>
-<section class="portfolio" id="portfolio">
+<section class="portfolio" id="portfolio_section">
     <h2 class="portfolio__title">Portfolio</h2>
-    <p class="portfolio__text">
-        <span><b>All</b></span><span>UI & UX</span><span>Graphic Design</span><span>Web Development</span>
-    </p>
+    <ul class="portfolio__list">
+        <li class="portfolio__list-item"><b>All</b></li>
+        <li class="portfolio__list-item">UI & UX</li>
+        <li class="portfolio__list-item">Graphic Design</li>
+        <li class="portfolio__list-item">Web Development</li>
+    </ul>
     <div class="portfolio__content">
         <picture>
             <!--up to 320px-->
@@ -194,7 +197,7 @@
         </picture>
     </div>
 </section>
-<section class="testimonials" id="testimonials">
+<section class="testimonials" id="testimonials_section">
     <h2 class="testimonials__title">Client Testimonial</h2>
     <div class="testimonials__content">
         <picture class="testimonials__picture">
@@ -241,22 +244,22 @@
         <p class="numbers__content-item">Happy Clients</p>
     </div>
 </section>
-<section class="contact" id="contact">
+<section class="contact" id="contact_section">
     <h2 class="contact__title">Hire Me For Your Next Amazing Project</h2>
     <div class="contact__content">
         <div class="contact__info">
             <p class="contact__info-text">Let’s make somthing new, different and more meaningful or make thing more visual or conceptual? Just say hello!</p>
-            <div class="contact__info-data">
-                <p class="contact__info-data-item">+123 569 789</p>
-                <p class="contact__info-data-item">youremail@gmail.com</p>
-                <p class="contact__info-data-item">28 Green Tower, Street name,<br>New York City, USA</p>
-            </div>
+            <ul class="contact__info-list">
+                <li class="contact__info-list-item">+123 569 789</li>
+                <li class="contact__info-list-item">youremail@gmail.com</li>
+                <li class="contact__info-list-item">28 Green Tower, Street name,<br>New York City, USA</li>
+            </ul>
         </div>
         <form action="" class="contact__form">
             <label class="contact__form-label" for="name"><input class="contact__form-input" type="text" id="name" name="name" required placeholder="Your name"></label>
             <label class="contact__form-label" for="email"><input class="contact__form-input" type="email" id="email" name="email" required placeholder="Your email Address"></label>
             <label class="contact__form-label" for="message"><input class="contact__form-input" type="text" id="message" name="message"  placeholder="Your budget (Optional)"></label>
-            <label class="contact__form-label" for="text"><textarea class="contact__form-input" id="text" name="text" rows="3" >Your project description</textarea></label>
+            <label class="contact__form-label" for="text"><textarea class="contact__form-input" id="text" name="text" rows="3" placeholder="Your project description"></textarea></label>
             <input class="contact__form-btn" type="submit" value="SEND">
         </form>
     </div>
@@ -271,6 +274,5 @@
         <a class="footer__links-item" href=""><img class="footer__links-img" src="./images/svg/dribbble.svg" alt="Dribble link"></a>
     </div>
 </footer>
-<!--Need to make :before element to be centered vertically-->
 </body>
 </html>

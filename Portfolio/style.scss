@@ -36,7 +36,7 @@ $font-weight-bold: 700;        // Bold
   font-weight: $font-weight-thin;
 }
 
-// Global settings
+// Global styles
 
 * {
   margin: 0;
@@ -63,6 +63,7 @@ body {
   align-items: center;
   padding-top: 2rem;
   &__nav {
+    display: flex;
     align-items: center;
     &-list {
       display: flex;
@@ -70,11 +71,33 @@ body {
     }
     &-item {
       list-style: none;
+      position: relative;
     }
     &-link {
       text-decoration: none;
       @extend %nav-text;
       color: $black;
+      position: relative;
+      padding: 0.5rem 0;
+      transition: color 0.3s ease-in-out;
+      // Underline hover effect
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -5px;
+        width: 0;
+        height: 3px;
+        background-color: $dark-grey;
+        transition: all 0.3s ease-in-out;
+        transform: translateX(-50%);
+      }
+      &:hover {
+        color: $dark-grey;
+        &::after {
+          width: 100%;
+        }
+      }
     }
     &-close, &-open {
       display: none; // Visible in tablet and mobile versions only
@@ -260,7 +283,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10rem 0;
+  padding: 5rem 0;
   gap: 3rem;
   &__title {
     font-size: $font-size-6x1;
@@ -277,7 +300,7 @@ body {
     justify-content: space-evenly;
     width: 380px;
     height: 400px;
-    padding: 80px 40px;
+    padding: 4rem 2rem;
     gap: 2rem;
     background-color: $light-grey;
     &-title {
@@ -303,6 +326,7 @@ body {
     color: $white;
   }
 }
+
 
 @media (max-width: 769px) {
   .skills__list {
@@ -334,23 +358,32 @@ body {
     font-size: $font-size-lg;
     font-weight: $font-weight-medium;
   }
-  &__text {
+  &__list {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     align-items: center;
     font-size: $font-size-2x1;
-  }
-  &__text > span:not(:first-child):before {
-    content: url("./images/svg/line.svg");
-    padding-right: 1rem;
+    &-item:not(:first-child) {
+      list-style-type: "-";
+      padding-left: 1rem;
+    }
+    &-item:first-child {
+      list-style: none;
+    }
   }
   &__content {
     column-count: 3; /* Strict 3-column layout */
-    column-gap: 1rem;
+    column-gap: 2rem;
     &-item {
       display: inline-block; /* Ensures items respect column layout */
       width: 100%; /* Makes images fit the column width */
-      margin-bottom: 1rem; /* Same gap as column-gap */
+      margin-bottom: 2rem; /* Same gap as column-gap */
+      filter: grayscale(100%);
+      transition: filter 0.8s ease-in-out, transform 0.8s ease-in-out;
+    }
+    &-item:hover {
+      transform: scale(1.1); // Slight zoom-in effect
+      filter: grayscale(0%);
     }
   }
 }
@@ -361,17 +394,18 @@ body {
     flex-direction: column;
     align-items: center;
   }
+}
 
-  .portfolio__text {
+@media (max-width: 400px) {
+  .portfolio__list {
     align-self: flex-start;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .portfolio__text > span:before {
-    content: url("./images/svg/line.svg");
-    padding-right: 1rem;
+    &-item:first-child {
+      list-style-type: "-";
+      padding-left: 1rem;
+    }
   }
 }
 
@@ -525,21 +559,16 @@ body {
       font-size: $font-size-md;
       font-weight: $font-weight-thin;
     }
-    &-data {
+    &-list {
       position: absolute;
       left: 0;
       bottom: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    &-data-item {
       font-size: $font-size-xs;
       font-weight: $font-weight-thin;
-    }
-    &-data > p:before {
-      content: url("./images/svg/line.svg");
-      padding-right: 1rem;
+      &-item {
+        list-style-type: "-";
+        padding-left: 1rem;
+      }
     }
   }
   &__form {
