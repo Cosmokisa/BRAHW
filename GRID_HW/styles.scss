@@ -42,11 +42,15 @@ $grey: #111111;
   box-sizing: border-box;
 }
 
+body {
+  margin: min(8em, 10%);
+  // This will calculate which of this values is smaller, and the padding will be smaller as the screen gets smaller
+}
+
 .header {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  padding: 8rem;
   &__nav-list{
     display: flex;
     gap: 3rem;
@@ -55,16 +59,38 @@ $grey: #111111;
     list-style: none;
     text-decoration: none;
     @extend %regular-text;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease-in-out;
+    // Underline hover effect
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -5px;
+      width: 0;
+      height: 3px;
+      background-color: $grey;
+      transition: all 0.3s ease-in-out;
+      transform: translateX(-50%);
+    }
+    &:hover {
+      color: $grey;
+      &::after {
+        width: 100%;
+      }
+    }
   }
 }
 
 .description {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin: 4rem 0;
   &__content-text{
     @extend %blue-text;
-    padding-bottom: 3rem;
+    padding: 3rem 0;
   }
   &__content-header {
     @extend %header-text;
@@ -81,6 +107,12 @@ $grey: #111111;
   }
 }
 
+@media (max-width: 768px) {
+  .description__content-header {
+    font-size: 30px;
+  }
+}
+
 .gallery {
   display: flex;
   justify-content: center;
@@ -88,7 +120,7 @@ $grey: #111111;
   &__projects {
     column-count: 3; /* Strict 3-column layout */
     column-gap: 2rem; /* Maintain equal spacing */
-    width: 80vw;
+    width: 90vw;
     &__item{
       display: inline-block; /* Ensures items respect column layout */
       width: 100%; /* Makes images fit the column width */
@@ -102,24 +134,19 @@ $grey: #111111;
   }
 }
 
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .projects {
-    column-count: 2; /* 2 columns for tablets */
+  .gallery__projects {
+    column-count: 1; /* 2 columns for tablets */
   }
 }
 
-@media (max-width: 480px) {
-  .projects {
-    column-count: 1; /* 1 column for mobile */
-  }
-}
 
 .service {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  padding-top: 8rem;
+  padding: 8rem 0;
   &__list {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -135,16 +162,27 @@ $grey: #111111;
   }
 }
 
+@media (max-width: 768px) {
+  .service__list__header {
+    font-size: 20px;
+  }
+}
+
+
+
 .awards {
-  //text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   &__item {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    width: 80vw;
+    //grid-template-rows: 1fr 1fr;
+    justify-content: stretch;
     justify-items: start;
     align-items: start;
-    gap: 2rem;
-    //border-bottom: 1px solid #ddd;
+    gap: 1rem;
   }
   &__title {
     @extend %header-text;
@@ -156,14 +194,24 @@ $grey: #111111;
     @extend %regular-text;
     grid-column: 3 / 4;
   }
-  &__name {
+  &__text, &__name {
     @extend %grey-text;
     grid-column: 4 / 5;
+  }
+  &__name {
+    opacity: 100%;
   }
   &__year {
     @extend %black-text;
     grid-column: 5 / 6;
-    align-self: start;
+    justify-self: end;
+    grid-row: 1 / 2;
+  }
+  &__years {
+    @extend %black-text;
+    grid-column: 5 / 6;
+    justify-self: end;
+    grid-row: 3 / 4;
   }
   &__item:nth-child(3), &__item:nth-child(7) {
      @extend %black-text;
@@ -171,16 +219,16 @@ $grey: #111111;
 }
 
 hr {
-  width: 80vw;
+  width: 100%;
   background-color: #ddd;
-  margin: 20px auto;
+  margin: 1rem auto;
 }
 
 .footer {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  padding: 8rem;
+  padding-top: 5rem;
   &__nav-list{
     display: flex;
     gap: 3rem;

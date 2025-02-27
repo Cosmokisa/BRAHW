@@ -19,7 +19,7 @@
   font-weight: 700;
 }
 
-.awards__name, .service__list__item, .description__quote {
+.awards__text, .awards__name, .service__list__item, .description__quote {
   color: #111111;
   font-family: "Mulish", serif;
   font-size: 18px;
@@ -27,7 +27,7 @@
   line-height: 1.8;
 }
 
-.awards__item:nth-child(3), .awards__item:nth-child(7), .awards__year {
+.awards__item:nth-child(3), .awards__item:nth-child(7), .awards__years, .awards__year {
   font-family: "Mulish", serif;
   font-size: 18px;
 }
@@ -38,11 +38,14 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: min(8em, 10%);
+}
+
 .header {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  padding: 8rem;
 }
 .header__nav-list {
   display: flex;
@@ -51,15 +54,36 @@
 .header__nav-item {
   list-style: none;
   text-decoration: none;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease-in-out;
+}
+.header__nav-item::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 0;
+  height: 3px;
+  background-color: #111111;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+.header__nav-item:hover {
+  color: #111111;
+}
+.header__nav-item:hover::after {
+  width: 100%;
 }
 
 .description {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin: 4rem 0;
 }
 .description__content-text {
-  padding-bottom: 3rem;
+  padding: 3rem 0;
 }
 .description__content-header > span {
   color: #4A4FF2;
@@ -71,6 +95,11 @@
   justify-content: flex-end;
 }
 
+@media (max-width: 768px) {
+  .description__content-header {
+    font-size: 30px;
+  }
+}
 .gallery {
   display: flex;
   justify-content: center;
@@ -79,7 +108,7 @@
 .gallery__projects {
   column-count: 3; /* Strict 3-column layout */
   column-gap: 2rem; /* Maintain equal spacing */
-  width: 80vw;
+  width: 90vw;
 }
 .gallery__projects__item {
   display: inline-block; /* Ensures items respect column layout */
@@ -94,19 +123,15 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .projects {
-    column-count: 2; /* 2 columns for tablets */
-  }
-}
-@media (max-width: 480px) {
-  .projects {
-    column-count: 1; /* 1 column for mobile */
+  .gallery__projects {
+    column-count: 1; /* 2 columns for tablets */
   }
 }
 .service {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  padding-top: 8rem;
+  padding: 8rem 0;
 }
 .service__list {
   display: grid;
@@ -118,13 +143,24 @@
   grid-column: 1/span 3;
 }
 
+@media (max-width: 768px) {
+  .service__list__header {
+    font-size: 20px;
+  }
+}
+.awards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .awards__item {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  width: 80vw;
+  justify-content: stretch;
   justify-items: start;
   align-items: start;
-  gap: 2rem;
+  gap: 1rem;
 }
 .awards__title {
   font-size: 22px;
@@ -134,24 +170,33 @@
 .awards__category {
   grid-column: 3/4;
 }
-.awards__name {
+.awards__text, .awards__name {
   grid-column: 4/5;
+}
+.awards__name {
+  opacity: 100%;
 }
 .awards__year {
   grid-column: 5/6;
-  align-self: start;
+  justify-self: end;
+  grid-row: 1/2;
+}
+.awards__years {
+  grid-column: 5/6;
+  justify-self: end;
+  grid-row: 3/4;
 }
 hr {
-  width: 80vw;
+  width: 100%;
   background-color: #ddd;
-  margin: 20px auto;
+  margin: 1rem auto;
 }
 
 .footer {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  padding: 8rem;
+  padding-top: 5rem;
 }
 .footer__nav-list {
   display: flex;
