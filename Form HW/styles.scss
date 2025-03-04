@@ -1,0 +1,357 @@
+//variables
+$white: #FFFFFF;
+$grey: #DCE2E6;
+$orange: #FF7F57;
+$blue: #2557AB;
+$dark-blue: #11364E;
+$greyish-blue: #3B4D6C;
+$darkest-blue: #13253A;
+
+//extensions
+
+%button {
+    border: none;
+    color: white;
+    text-align: center;
+    padding: 10px 50px;
+    height: 80px;
+    width: 400px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: regular-font;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 20px 0px 40px rgba(124, 122, 122, 0.5);
+  }
+
+//font settings
+
+%nav-text {
+    color: $darkest-blue;
+    font-family: regular-font;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+%regular-text {
+    color: $darkest-blue;
+    font-family: regular-font;
+    font-size: 19px;
+    line-height: 1.8;
+}  
+
+%bold-text {
+    font-family: bold-font;
+    font-size: 50px;
+    color: $darkest-blue;
+}  
+
+%bold-low-text {
+    font-family: bold-font;
+    color: $greyish-blue;
+    font-size: 22px;
+}
+
+%blue-text {
+    color: $blue;
+    font-family: regular-font;
+    font-size: 18px;
+    font-weight: 600;
+}  
+
+%italic-text {
+    font-family: italic-font;
+    color: $darkest-blue;
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+%white-text {
+    color: $white;
+    font-family: regular-font;
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+%white-bold-text {
+    font-family: bold-font;
+    font-size: 50px;
+    color: $white;
+}
+
+%thin-tall-text {
+    color: $darkest-blue;
+    font-family: regular-font;
+    font-size: 45px;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: regular-font;
+    src: url(./fonts/AvenirNextLTPro-Regular.otf);
+}  
+
+@font-face {
+    font-family: bold-font;
+    src: url(./fonts/AvenirNextLTPro-Bold.otf);
+}
+
+@font-face {
+    font-family: italic-font;
+    src: url(./fonts/AvenirNextLTPro-It.otf);
+} 
+
+//mixins
+
+@mixin flex_row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+
+@mixin flex_centered_row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+@mixin flex_start_column {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+}
+
+@mixin flex_centered-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin grid {
+    padding: 100px 0;
+    display: grid;
+    place-items: center;
+    row-gap: 30px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navigation {
+    @include flex_row();
+    gap: 30%;
+    padding: 50px 0 200px 0;
+    background-color: $grey;
+    &_list {
+        @include flex_row();
+        gap: 60px;
+        &_item {
+            list-style: none;
+            @extend %nav-text;
+        }
+    }
+}
+
+.welcome {
+    @include flex_centered_row();
+    gap: 10%;
+    background-color: $grey;
+    padding-bottom:200px;
+    &_content {
+        @include flex_start_column();
+        gap: 50px;
+        &_text:first-child {
+            @extend %blue-text;
+        }
+        &_text:nth-child(2) {
+            @extend %bold-text;
+        }
+        &_text:nth-child(3) {
+            @extend %regular-text;
+        }  
+    }  
+    &_img {
+        width: 40%;
+        height: auto;
+    }    
+}
+
+.orange {
+    @extend %button;
+    background-color: $orange;
+    box-shadow: 20px 0px 50px rgba(124, 122, 122, 0.5);
+}
+
+.blue {
+    @extend %button;
+    background-color: $blue;
+    box-shadow: 0px 20px 40px rgba(32, 32, 32, 0.5);
+}
+
+.orange:hover, .blue:hover, .orange:focus, .blue:focus, .orange:active, .blue:active {
+    box-shadow: 20px 20px 50px rgba(15, 14, 14, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.agency {
+    @include flex_centered-column ();
+    gap: 50px;
+    margin: 150px 0 100px 0;
+    text-align: center;
+    &_text {
+        @extend %blue-text;
+    }
+    &_header {
+        @extend %thin-tall-text;
+    }
+    &_content {
+        @include flex_row ();
+        gap: 250px;
+        &_column {
+            @include flex_centered_column ();
+            gap: 20px;
+            & > p:nth-child(2)  {
+            @extend %bold-low-text;
+            }
+            & > p:nth-child(3) {
+            @extend %regular-text;
+            }
+            & >img {
+                height: 64px;
+                width: 64px;
+            }
+        } 
+    }
+}
+
+.numbers_content {
+    @include flex_row();
+    background-color: $grey;
+    padding: 60px 0;
+    &_column {
+        padding-right: 60px;
+        &_item:first-child {
+            @extend %thin-tall-text;
+            &::after {
+                content:"+";
+                color: $orange;
+            }
+        }
+        &_item:nth-child(2) {
+            @extend %blue-text;
+            padding-top: 10px;
+        }
+    }
+}
+
+.about {
+    @include flex_centered_column();
+    gap: 10px;
+    margin: 100px 0;
+    &_header:first-child{
+        @extend %blue-text;
+    }
+    &_header:nth-child(2){
+        @extend %bold-text;
+    }
+    &_content {
+        @include flex_row();
+        gap: 40px;
+        @extend %regular-text;
+        &_text {
+            padding: 30px 100px;
+            &_item:first-of-type {
+                @extend %italic-text;
+            } 
+        }
+    }
+     &_img {
+         display: flex;
+         gap: 150px;
+         margin-top: 30px;
+     }
+}
+
+hr {
+    width: 80%;
+    color: $grey;
+    margin: 0 auto; 
+}
+
+.relax {
+    @include flex_row();
+    padding: 150px 0 0 0;
+    &_content {
+        @include flex_start_column();
+        gap: 30px;
+        &_text:first-child {
+            @extend %bold-text;
+        }
+        &_text:nth-child(2) {
+            @extend %regular-text;
+        }
+        &_text:nth-child(3), &_text:nth-child(4), &_text:nth-child(5) {
+            @extend %nav-text;
+            &::before {
+                content: url(./images/icon-tick.png);
+                margin: 10px 20px 0 0;
+            }
+
+        }
+    }
+    &_img {
+        width: 35%;
+        height: auto;
+    }   
+}
+
+.start {
+    background-color: $orange;
+    @include grid;
+    &_text {
+        @extend %white-text;
+    }
+    &_heading {
+        @extend %white-bold-text;
+    }
+}
+
+.contact {
+    background-color: $dark-blue;
+    @include flex_centered-column();
+    padding: 150px 0;
+    gap: 20px;
+    &_text {
+        @extend %thin-tall-text;
+        color: $white;
+        padding-bottom: 20px;
+    }
+    &_form {
+       display: flex;
+       flex-flow: column nowrap;
+       gap: 30px;
+       &_label {
+        @extend %white-text;
+       }
+       &_input {
+        background-color: $dark-blue;
+        @extend %regular-text;
+        border: none;
+        border-bottom: 1px solid $white;
+       }
+    }
+    
+}
+
+.footer {
+    background-color: $darkest-blue;
+    text-align: center;
+    &_text {
+        @extend %white-text;
+        padding: 15px 0;
+    }
+}

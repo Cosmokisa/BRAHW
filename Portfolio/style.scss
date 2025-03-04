@@ -1,0 +1,688 @@
+// Color variations
+$black: #000000;
+$dark-grey: #333333;
+$light-grey: #D6D6D6;
+$white: #FFFFFF;
+
+// Font families
+$font-primary: "Rubik", serif;
+$font-secondary:"Ubuntu", serif;
+
+// Responsive font sizes - Decreasing for smaller screen sizes
+$font-size-2x1: clamp(0.875rem, calc(1vw + 0.5rem), 1rem);      // 14px → 18px
+$font-size-xs: clamp(1rem, calc(1.2vw + 0.5rem), 1.125rem);    // 18px → 20px
+$font-size-3xl: clamp(1.125rem, calc(1vw + 0.5rem), 1.25rem);  // 20px → 24px
+$font-size-sm: clamp(1.25rem, calc(1.5vw + 0.5rem), 1.5rem);  // 24px → 28px
+$font-size-4xl: clamp(1.5rem, calc(1.5vw + 0.75rem), 1.75rem); // 28px → 36px
+$font-size-md: clamp(1.75rem, calc(2vw + 0.75rem), 2.25rem);  // 36px → 40px
+$font-size-5x1: clamp(2rem, calc(2vw + 1rem), 2.5rem);          // 40px → 46px
+$font-size-lg: clamp(2.25rem, calc(2.5vw + 1rem), 2.875rem);  // 46px → 54px
+$font-size-6x1: clamp(2.875rem, calc(2.5vw + 1rem), 3.375rem);  // 54px → 64px
+$font-size-xl: clamp(3.375rem, calc(3vw + 1rem), 4rem);       // 64px → 74px
+
+//clamp insures that the screen will have minimum, prefer and max size font
+//calc will make the font scalable
+
+// Font weights
+$font-weight-thin: 300;       // Thin
+$font-weight-normal: 400;     // Normal
+$font-weight-medium: 500;      // Medium
+$font-weight-semibold: 600;    // Semi-Bold
+$font-weight-bold: 700;        // Bold
+
+%nav-text {
+  font-family: $font-secondary;
+  font-size: $font-size-md;
+  font-weight: $font-weight-thin;
+}
+
+// Global styles
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: min(5em, 8%);
+  // This will calculate which of this values is smaller, and the padding will be smaller as the screen gets smaller
+  font-family: $font-primary;
+  color: $dark-grey;
+}
+
+// Hide the checkbox
+#sidebar {
+  display: none;
+}
+
+// Default navigation styles
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  &__nav {
+    display: flex;
+    align-items: center;
+    &-list {
+      display: flex;
+      gap: 3rem;
+    }
+    &-item {
+      list-style: none;
+      position: relative;
+    }
+    &-link {
+      text-decoration: none;
+      @extend %nav-text;
+      color: $black;
+      position: relative;
+      padding: 0.5rem 0;
+      transition: color 0.3s ease-in-out;
+      // Underline hover effect
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -5px;
+        width: 0;
+        height: 3px;
+        background-color: $dark-grey;
+        transition: all 0.3s ease-in-out;
+        transform: translateX(-50%);
+      }
+      &:hover {
+        color: $dark-grey;
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+    &-close, &-open {
+      display: none; // Visible in tablet and mobile versions only
+    }
+  }
+}
+
+// Styles for tablet and mobile versions
+@media (max-width: 769px) {
+  .header {
+    position: relative;
+    &__nav {
+      position: fixed;  // Navbar stays even if page is scrolled
+      top: 0;
+      right: -100%; // Hides the sidebar
+      width: 65vw;
+      height: 100vh;
+      background-color: $dark-grey;
+      z-index: 10;
+      display: flex;
+      align-items: flex-start;
+      padding: 2rem;
+      transition: right 0.75s ease-out;
+      &-list {
+        flex-direction: column;
+        width: 100%;
+        gap: 2rem;
+        padding: 1rem;
+      }
+      &-link {
+        color: $white;
+      }
+      &-close {
+        display: block;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        cursor: pointer;
+      }
+    }
+    // Show the menu icon
+    .header__nav-open {
+      display: block;
+      position: absolute;
+      right: 1rem;
+      cursor: pointer;
+    }
+    &__logo {
+      content: url("./images/svg/logo_small.svg");
+    }
+  }
+}
+
+// Checkbox checked - moves sidebar into view
+ #sidebar:checked ~ .header__nav {
+    right: 0;
+ }
+
+//  Hides open button when sidebar is visible
+ #sidebar:checked ~ .header__nav-open {
+    display: none;
+ }
+
+// Main section styles
+
+.main {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 5rem;
+  padding-top: 5rem;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    &-img {
+      height: 39px;
+      width: 147px;
+    }
+    &-title {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-normal;
+    }
+    &-description {
+      font-size: $font-size-md;
+      font-weight: $font-weight-normal;
+    }
+    &-bio {
+      font-size: $font-size-3xl;
+      font-weight: $font-weight-normal;
+    }
+  }
+}
+
+@media (max-width: 769px) {
+  .main {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+}
+
+// Scroll bar styles
+
+.scroll {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding-top: 3rem;
+  &__links {
+    grid-column: 1;
+    justify-self: start;
+    display: flex;
+    gap: 2rem;
+  }
+  &__btn {
+    grid-column: 2;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: $font-size-2x1;
+    font-weight: $font-weight-thin;
+    &-link {
+      text-decoration: none;
+      color: inherit; /* Keeps text color same as surrounding text */
+    }
+  }
+
+}
+//Makes scroll bar disappear and changes links container
+@media (max-width: 769px) {
+  .scroll {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    &__btn {
+      display: none;
+    }
+  }
+}
+
+// Video section styles
+.video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 12rem;
+  padding-bottom: 5rem;
+  gap: 2rem;
+  &__text {
+    font-size: $font-size-4xl;
+    font-weight: $font-weight-normal;
+  }
+  &__container {
+    width: 1262px;
+    height: 710px;
+  }
+}
+
+//Video changes size on different screen sizes but I used aspect ratio calculator so it to look good on dif devices
+@media (max-width: 769px) {
+  .video__container {
+    width: 728px;
+    height: 546px;
+  }
+}
+
+@media (max-width: 400px) {
+  .video__container {
+    width: 288px;
+    height: 162px;
+  }
+  .video {
+    padding-top: 5rem;
+  }
+
+}
+
+// Skills section styles
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 0;
+  gap: 3rem;
+  &__title {
+    font-size: $font-size-6x1;
+    font-weight: $font-weight-medium;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 380px;
+    height: 400px;
+    padding: 4rem 2rem;
+    gap: 2rem;
+    background-color: $light-grey;
+    &-title {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-normal;
+    }
+    &-text {
+      font-size: $font-size-2x1;
+      font-weight: $font-weight-normal;
+    }
+    &-action {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 2rem;
+    }
+    &-more {
+      font-size: $font-size-2x1;
+      font-weight: $font-weight-semibold;
+    }
+  }
+  &__item:first-child {
+    background-color: $dark-grey;
+    color: $white;
+  }
+}
+
+
+@media (max-width: 769px) {
+  .skills__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .skills__item {
+    width: 95vw;
+  }
+}
+
+@media (max-width: 400px) {
+  .skills {
+    padding: 3rem 0;
+  }
+}
+
+//Portfolio styles
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 0;
+  gap: 3rem;
+  &__title {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-medium;
+  }
+  &__list {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    font-size: $font-size-2x1;
+    &-item:not(:first-child) {
+      list-style-type: "-";
+      padding-left: 1rem;
+    }
+    &-item:first-child {
+      list-style: none;
+    }
+  }
+  &__content {
+    column-count: 3; /* Strict 3-column layout */
+    column-gap: 2rem;
+    &-item {
+      display: inline-block; /* Ensures items respect column layout */
+      width: 100%; /* Makes images fit the column width */
+      margin-bottom: 2rem; /* Same gap as column-gap */
+      filter: grayscale(100%);
+      transition: filter 0.8s ease-in-out, transform 0.8s ease-in-out;
+    }
+    &-item:hover {
+      transform: scale(1.1); // Slight zoom-in effect
+      filter: grayscale(0%);
+    }
+  }
+}
+
+@media (max-width: 769px) {
+  .portfolio__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .portfolio__list {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    &-item:first-child {
+      list-style-type: "-";
+      padding-left: 1rem;
+    }
+  }
+}
+
+//Testimonials styles
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 0;
+  gap: 5rem;
+  &__title {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-medium;
+  }
+  &__content {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    gap: 5rem;
+  }
+  &__quote {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  &__phrase {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  &__phrase-item:nth-child(2) {
+    font-size: $font-size-4xl;
+    font-weight: $font-weight-normal;
+  }
+  &__phrase-item:nth-child(3) {
+    align-self: flex-end;
+  }
+  &__signature-item:first-child {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+  }
+  &__signature-item:nth-child(2) {
+    font-size: $font-size-xs;
+    font-weight: $font-weight-normal;
+    padding-bottom: 5rem;
+  }
+  }
+
+@media (max-width: 1440px) {
+  .testimonials__content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 769px) {
+  .testimonials__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .testimonials__signature {
+    padding-top: 3rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .testimonials {
+    padding: 3rem 0;
+  }
+}
+
+//Numbers section styles
+.numbers {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  align-items: stretch; // Ensures all columns take the same height
+  margin: 0 auto; //Center the grid content
+  width: 70vw;
+  gap: 2rem;
+  padding: 10rem 0;
+  background: url("./images/svg/background.svg") no-repeat center ;
+  background-size: contain;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; // Forces content items to match their parent's height
+    gap: 1rem;
+  }
+  &__content-item:first-child {
+    font-size: $font-size-6x1;
+    font-weight: $font-weight-normal;
+  }
+  &__content-item:nth-child(2) {
+    font-size: $font-size-3xl;
+    font-weight: $font-weight-normal;
+  }
+}
+
+@media (max-width: 400px) {
+  .numbers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;//Remove the background img
+  }
+}
+
+@media (max-width: 769px) {
+  .numbers {
+    width: 100%;
+    gap: 1rem;
+    padding: 3rem 0;
+    &__content-item:first-child {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-normal;
+    }
+    &__content-item:nth-child(2) {
+      font-size: $font-size-2x1;
+      font-weight: $font-weight-normal;
+    }
+  }
+}
+
+// Styles for contact section
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 0;
+  gap: 3rem;
+  &__title {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-medium;
+  }
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 5rem;
+    gap: 5rem;
+    width: 70vw;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    position: relative;
+    &-text {
+      font-size: $font-size-md;
+      font-weight: $font-weight-thin;
+    }
+    &-list {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      font-size: $font-size-xs;
+      font-weight: $font-weight-thin;
+      &-item {
+        list-style-type: "-";
+        padding-left: 1rem;
+      }
+    }
+  }
+  &__form {
+    background-color: $dark-grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    gap: 1rem;
+    width: 90%;
+    &-label {
+      display: block; /* Ensures labels take full width */
+      width: 100%;
+      margin-bottom: 10px; /* Adds spacing between inputs */
+    }
+    &-input {
+      background-color: $dark-grey;
+      border: none;
+      border-bottom: 1px solid $white;
+      font-size: $font-size-2x1;
+      font-weight: $font-weight-normal;
+      color: $white;
+      padding-top: 3rem;
+      width: 100%; /* Makes inputs full-width */
+    }
+    &-input::placeholder  {
+      color: $white;
+      opacity: 1; /* Ensures full visibility in some browsers */
+    }
+    &-btn {
+      background-color: $white;
+      font-size: $font-size-2x1;
+      font-weight: $font-weight-thin;
+      padding: 16px 40px;
+      align-self: flex-end;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .contact__content {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 769px) {
+  .contact__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact__form {
+    width: 100%;
+  }
+
+  .contact__info-data {
+    position: static;
+  }
+}
+
+@media (max-width: 400px) {
+  .contact__content {
+    padding: 1rem;
+  }
+
+  .contact__form {
+    padding: 1rem;
+  }
+}
+
+
+//Footer styles
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  &__links {
+    display: flex;
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 769px) {
+  .footer {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer__links {
+    gap: 2rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
