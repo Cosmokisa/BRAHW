@@ -1,3 +1,5 @@
+// NW for Introduction to JS
+
 /*
 
 // 1st Request a user’s name and display the response “Hello, [name]”.
@@ -78,4 +80,130 @@ console.log(sumOfInterest);
 alert(`Your deposit for 2 months at a yearly interest rate of 5% will earn ${interestTwoMonths} in interest. The total amount after interest is ${sumOfInterest}.`);
 
 */
+
+// HW for Data types and operators. Pt 1
+
+// Request a three-digit number from a user and check whether it has identical digits.
+/*
+let number = +prompt('Please insert three-digit number.');
+console.log(number);
+let first = Math.floor(number / 100);
+console.log(first);
+let second = Math.floor((number / 10) % 10);
+console.log(second);
+let third = number % 10;
+console.log(third);
+if (first === second) {
+    console.log("First number is the same as the second one!");
+} else if ( first === third) {
+    console.log("First number is the same as the third one!");
+} else if (second === third) {
+    console.log("Second and the third numbers are identical!");
+} else {
+    console.log("The inserted number does not have identical digits!");
+}
+*/
+
+// Execute a currency converter. A user puts in USD, chooses a currency (EUR, SEK, AUD, etc.) and gets the result.
+/*
+let USD = +prompt("Please enter the amount in USD.");
+console.log(USD);
+let desiredCurrency = prompt("Please select the currency (EUR, UAH, GBP) to which you would like to convert your funds and enter its corresponding abbreviation.");
+console.log(desiredCurrency);
+let EUR = USD * 0.92;
+let UAH = USD * 41.3;
+let GBP = USD * 0.7;
+if (desiredCurrency === "EUR") {
+console.log(EUR);
+} else if (desiredCurrency === "UAH" ) {
+    console.log(UAH);
+} else if ( desiredCurrency === "GBP") {
+    console.log(GBP);
+}
+*/
+
+// Request a date (dd:mm:yy) and put out the one that goes after it. Pay attention to the start of a new month, a new year, and also leap years.
+/*
+let dateMonthYear = prompt("Please, insert date in following format (dd:mm:yy).");
+    console.log(dateMonthYear);
+let d1 = +dateMonthYear[0];
+let d2 = +dateMonthYear[1];
+let m1 = +dateMonthYear[3];
+let m2 = +dateMonthYear[4];
+let y1 = +dateMonthYear[6];
+let y2 = +dateMonthYear[7];
+
+// Convert numbers to a date
+let day = d1 * 10 + d2;
+let month = m1 * 10 + m2;
+let year = y1 * 10 + y2 ;
+
+year += 2000;
+
+let isLeap = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+
+// how many days in the month
+let daysInMonth = 31;
+if (month === 4 || month === 6 || month === 9 || month === 11) {
+    daysInMonth = 30;
+} else if (month === 2) {
+    daysInMonth = isLeap ? 29 : 28;
+}
+
+day++;
+
+if (day > daysInMonth) {
+    day = 1;
+    month++;
+}
+
+if (month > 12) {
+    month = 1;
+    year++
+}
+
+// Convert back to two-digit
+year %= 100; //year = year % 100;
+
+// Convert numbers back to string format with leading zeros
+let newD1 = Math.floor(day / 10), newD2 = day % 10;
+let newM1 = Math.floor(month / 10), newM2 = month % 10;
+let newY1 = Math.floor(year / 10), newY2 = year % 10;
+
+// Construct the next date string manually
+let nextDate = `${newD1}${newD2}:${newM1}${newM2}:${newY1}${newY2}`;
+
+// Output the result
+console.log("Next date:", nextDate);
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
