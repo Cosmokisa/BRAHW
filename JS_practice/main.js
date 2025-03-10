@@ -1,3 +1,5 @@
+/*
+
 // 1st Request a user’s name and display the response “Hello, [name]”.
 
 let name = prompt("What is your name?") ;// Asks the user their name
@@ -74,4 +76,6 @@ let interestTwoMonths = percentageDecimalForm * twoMonthsFraction;  // Count the
 let sumOfInterest = sum * (1 + interestTwoMonths);
 console.log(sumOfInterest);
 alert(`Your deposit for 2 months at a yearly interest rate of 5% will earn ${interestTwoMonths} in interest. The total amount after interest is ${sumOfInterest}.`);
+
+*/
 
