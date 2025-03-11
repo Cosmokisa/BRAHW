@@ -177,16 +177,34 @@ let nextDate = `${newD1}${newD2}:${newM1}${newM2}:${newY1}${newY2}`;
 console.log("Next date:", nextDate);
 */
 
+// HW for Data types and operators. Pt 2
 
+// Add 0.1 and 0.2 to get a mathematically correct answer.
+/*
+let sum = Math.floor((0.1 + 0.2) * 10) / 10;
+console.log(sum);
+*/
 
+// Add the string “1” and the digit 2 (both operands must be in variables), and get a mathematically correct answer.
+/*
+let one = "1";
+let two = 2;
+console.log(`The sum will be ${+one + two}`);
+*/
 
+//  Ask the user for a three-digit number and print it backwards. To solve the problem, you will need the % operator (remainder of division).
+/*
+let number = prompt("Please. insert three-digit number.");
 
+let first = Math.floor(number / 100);
+console.log(first);
+let second = Math.floor((number / 10) % 10);
+console.log(second);
+let third = number % 10;
+console.log(third);
 
-
-
-
-
-
+console.log(`Backwards:${third}${second}${first}.`);
+*/
 
 
 
