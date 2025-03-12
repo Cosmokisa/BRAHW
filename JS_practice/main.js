@@ -194,7 +194,7 @@ console.log(`The sum will be ${+one + two}`);
 
 //  Ask the user for a three-digit number and print it backwards. To solve the problem, you will need the % operator (remainder of division).
 /*
-let number = prompt("Please. insert three-digit number.");
+let number = prompt("Please, insert three-digit number.");
 
 let first = Math.floor(number / 100);
 console.log(first);
@@ -204,13 +204,66 @@ let third = number % 10;
 console.log(third);
 
 console.log(`Backwards:${third}${second}${first}.`);
+
+// or you can do it like this
+
+let number = prompt("Please, insert three-digit number.");
+
+let numberOne = +number[0];
+let numberTwo = +number[1];
+let numberThree = +number[2];
+
+console.log(`Backwards:${numberThree}${numberTwo}${numberOne}`);
+
 */
 
+// HW for Data types and operators. Pt 3
+
+// Create three variables for numeric, string, and boolean data, convert each of them to two other types (number -> string and boolean, string -> number and boolean, boolean -> number and string)
+/*
+// converting to number data type using + operator
+let one = 1;
+one = +"1";
+one = +true;
+
+//converting to a boolean Using double negation (!!)
+let yes = true;
+yes = !!5;
+yes = !!"yes";
 
 
+// converting to a string Using String Concatenation (+) and empty string
+let empty = "";
+empty = (false + "");
+empty = (0 + "");
 
+// Was checking everything with typeof operator
+*/
+// Below is a code that asks the user for two numbers and shows their sum. It does not work correctly. The code in the example outputs 12 (for the default field values).What is the error? Fix it. The result should be 3.
+/*
+let a = +prompt("First number?", 1);
+let b = +prompt("Second number?", 2);
 
+alert(a + b); // 3
+*/
 
+//  What would be the result of the expressions below?
+
+/*
+"" + 1 + 0; // "10" (string) "" is a string so here we have string concatenation so "" + 1 = "1", "1" + 0 = "1" + "0" = "10"
+"" - 1 + 0  // -1 (number) - operator does not concatenate strings. Instead, it tries to convert its operands to numbers and then performs subtraction.
+true + false // 1 (number) when you use the + operator with Booleans, they are first converted to numbers, and then addition happens.
+6 / "3" //  All arithmetic operators (except + for strings) convert values to numbers first, so here the answer will be 2.
+"2" * "3"  // same as previous, the output will be 6.
+4 + 5 + "px" // answer will be NaN since "px" cannot be converted to a number.
+"$" + 4 + 5 // "$" is not a numeric value, JavaScript cannot convert it to a number so the output will be NaN.
+"4" - 2 // here the arithmetic operator converts the string and the output is 2.
+"4px" - 2 //  again, since "4px" cannot be converted to a number the output will be NaN.
+"  -9  " + 5 // -4
+"  -9  " - 5 // -14
+null + 1 // Output will be 1 (number) since arithmetic operator convert null data type to a 0 and 0 + 1 = 1.
+undefined + 1 // NaN since undefined cannot be converted to a valid number.
+*/
 
 
 
