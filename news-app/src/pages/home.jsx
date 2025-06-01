@@ -1,7 +1,7 @@
-import { getNews } from "../services/api";
+import { lastestNews } from "../services/api";
 import { useState, useEffect } from "react";
 import { Grid } from "@mui/material";
-import NewsCard from "../components/NewsCard";
+import NewsCard from "../components/newsCard.jsx";
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -12,7 +12,7 @@ function Home() {
   useEffect(() => {
     const loadArticles = async () => {
       try {
-        const data = await getNews();
+        const data = await lastestNews();
         setArticles(data);
       } catch (error) {
         console.error("Failed to load articles:", error);
@@ -48,8 +48,8 @@ function Home() {
       <div className="articles-grid">
         <Grid container spacing={2}>
           {articles?.map((article) => (
-            <Grid item xs={3}>
-              <NewsCard article={article} key={article.url} />
+            <Grid key={article.url}>
+              <NewsCard article={article} />
             </Grid>
           ))}
         </Grid>

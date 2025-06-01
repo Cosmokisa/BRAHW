@@ -1,32 +1,49 @@
-//import axios from "axios";
+import axios from "axios";
+
+// 50 articles each time
 
 const API_KEY = "684258456f0b4bd1a20f4e9686a4f2db";
 const BASE_URL = "https://newsapi.org/v2";
 
-// search every article published by over 150,000 different sources large and small in the last 5 years. This endpoint is ideal for news analysis and article discovery.
-export const getNews = async () => {
-  const response = await fetch(
-    `${BASE_URL}/everything?q=keyword&apiKey=${API_KEY}`,
-  );
-  const data = await response.json();
-  console.log("Fetched data:", data.articles);
-  return data.articles;
+// lastest articles for home page
+export const lastestNews = async () => {
+  try {
+    const response = await axios.get(`${BASE_URL}/everything`, {
+      params: {
+        q: "keyword",
+        sortBy: "publishedAt",
+        language: "en",
+        pageSize: "50",
+        apiKey: API_KEY,
+      },
+    });
+
+    console.log("Fetched data:", response.data.articles);
+    return response.data.articles;
+  } catch (error) {
+    console.error("Error fetching news:", error);
+    return [];
+  }
 };
 
-// returns breaking news headlines for countries, categories, and singular publishers. This is perfect for use with news tickers or anywhere you want to use live up-to-date news headlines.
+// sidebar: filter by country (5), by category (5), by phrase (it should work seperatly and together)
 
-export const topHeadliners = async () => {
-  const response = await fetch(`${BASE_URL}/top-headlines?api_key=${API_KEY}`);
-  const data = await response.json();
-  return data.results;
-};
+// navbar categories, for example for business, technology, health, sports
+export const navBarCategories = async (category = "general") => {
+  try {
+    const response = await axios.get(`${BASE_URL}/top-headlines`, {
+      params: {
+        country: "us",
+        category,
+        pageSize: "50",
+        apiKey: API_KEY,
+      },
+    });
 
-// search?
-
-export const searchArticles = async (query) => {
-  const response = await fetch(
-    `${BASE_URL}/everything?api_key=${API_KEY}&query=${encodeURIComponent(query)}`,
-  );
-  const data = await response.json();
-  return data.results;
+    console.log("Business articles", response.data.articles);
+    return response.data.articles;
+  } catch (error) {
+    console.error("Error fetching news:", error);
+    return [];
+  }
 };
