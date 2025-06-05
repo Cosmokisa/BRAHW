@@ -9,16 +9,12 @@ function NewsCard({ article }) {
       <button className="news-bookmark" onClick={onBookmark}>
         Save
       </button>
-      {/*<CardMedia*/}
-      {/*  component="img"*/}
-      {/*  image={article.urlToImage}*/}
-      {/*  alt={article.title}*/}
-      {/*/>*/}
-
       <h3 className="news-title">{article.title}</h3>
-      <p className="news-content">{article.description}</p>
+      <p className="news-author"> By {article.author}</p>
+      <img className="news-img" src={article.urlToImage} alt="" />
+      <p className="news-content">{article.content}</p>
       <a className="news-link" href={article.url}>
-        See the full article..
+        Read more »
       </a>
     </div>
   );

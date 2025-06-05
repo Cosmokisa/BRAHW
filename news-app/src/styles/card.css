@@ -1,55 +1,69 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .news-card {
+  border-bottom: 1px dashed #bbbbbb; /* Subtle dashed line at bottom */
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
   position: relative;
-  background-color: #edbe68;
-  border: 50px solid #ece4d1;
-  padding: 40px 24px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-  width: 500px;
-  height: 700px;
-  margin: 40px auto;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   overflow: hidden;
 }
 
-.news-bookmark {
-  position: absolute;
-  top: 24px;
-  left: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 22px;
-  color: #aaa;
-  transition: color 0.3s ease;
-}
-
-.news-bookmark:hover {
-  color: red;
+.news-card:last-child {
+  border-bottom: none; /* No border on the last article */
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .news-title {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  font-size: 22px;
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem; /* Larger headlines */
   font-weight: 700;
-  color: #111;
-  max-width: 50%;
-  text-align: right;
+  margin-bottom: 0.75rem;
+  color: #000000;
+  line-height: 1.1;
+  letter-spacing: -1px; /* Tighter for impact */
+  text-transform: uppercase; /* All caps for headlines */
+}
+
+.news-card .news-author {
+  font-family: "Lora", serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #444444;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #dddddd; /* Thin line below byline */
+  padding-bottom: 0.25rem;
+}
+
+.news-img {
+  width: 100%;
+  height: auto;
+  max-width: 250px; /* Larger images */
+  float: left; /* Float image to the left */
+  margin-right: 1.5rem;
+  margin-bottom: 1rem;
+  border: 2px solid #333333; /* Stronger image border */
+  border-radius: 0; /* Sharp corners */
+  filter: grayscale(100%) contrast(1.1); /* Grayscale with more contrast */
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15); /* More visible shadow */
 }
 
 .news-content {
-  position: absolute;
-  bottom: 24px;
-  left: 24px;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #444;
-  max-width: 60%;
+  text-align: justify; /* Justify text for newspaper look */
+  margin-bottom: 1rem;
+  color: #222222;
+}
+
+.news-link {
+  color: #000000; /* Black link */
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 1px solid #000000; /* Solid underline */
+  padding-bottom: 2px;
+  transition:
+    color 0.2s,
+    border-bottom-color 0.2s;
+}
+
+.news-link:hover {
+  color: #666666;
+  border-bottom-color: #666666;
 }

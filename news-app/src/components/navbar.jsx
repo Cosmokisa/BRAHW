@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
+import "../styles/navbar.css";
 
-function NavBar() {
+function Navbar() {
   return (
     <nav className="navbar">
-      <div className="navbar-home">
-        <Link to="/">THE SENTINEL</Link>
-      </div>
       <div className="navbar-links">
         <Link to="/" className="navbar-link">
           Home
@@ -30,4 +28,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default Navbar;

@@ -20,7 +20,6 @@ function CategoryTemplate({ category }) {
 
   return (
     <div>
-      <h1>{category.toUpperCase()} News</h1>
       {articles.map((article) => (
         <NewsCard article={article} key={article.url} />
       ))}
