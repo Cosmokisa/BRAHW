@@ -25,3 +25,7 @@
   color: #666666;
   text-decoration: underline;
 }
+
+.navbar .active {
+  color: #c1bdbd;
+}

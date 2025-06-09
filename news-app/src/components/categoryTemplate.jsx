@@ -1,4 +1,4 @@
-import { navBarCategories } from "../services/api";
+import { newsArticles } from "../services/news-service.js";
 import { useState, useEffect } from "react";
 import NewsCard from "./newsCard.jsx";
 
@@ -8,7 +8,7 @@ function CategoryTemplate({ category }) {
   useEffect(() => {
     const loadArticles = async () => {
       try {
-        const data = await navBarCategories(category);
+        const data = await newsArticles({ category });
         setArticles(data);
       } catch (error) {
         console.error("Failed to load articles:", error);

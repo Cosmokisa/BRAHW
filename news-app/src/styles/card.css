@@ -1,5 +1,5 @@
 .news-card {
-  border-bottom: 1px dashed #bbbbbb; /* Subtle dashed line at bottom */
+  border-bottom: 1px dashed #bbbbbb;
   padding-bottom: 2rem;
   margin-bottom: 2rem;
   position: relative;
@@ -7,20 +7,20 @@
 }
 
 .news-card:last-child {
-  border-bottom: none; /* No border on the last article */
+  border-bottom: none;
   padding-bottom: 0;
   margin-bottom: 0;
 }
 
 .news-title {
   font-family: "Playfair Display", serif;
-  font-size: 2.5rem; /* Larger headlines */
+  font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
   color: #000000;
   line-height: 1.1;
-  letter-spacing: -1px; /* Tighter for impact */
-  text-transform: uppercase; /* All caps for headlines */
+  letter-spacing: -1px;
+  text-transform: uppercase;
 }
 
 .news-card .news-author {
@@ -29,34 +29,34 @@
   font-size: 0.9rem;
   color: #444444;
   margin-bottom: 1rem;
-  border-bottom: 1px solid #dddddd; /* Thin line below byline */
+  border-bottom: 1px solid #dddddd;
   padding-bottom: 0.25rem;
 }
 
 .news-img {
   width: 100%;
   height: auto;
-  max-width: 250px; /* Larger images */
-  float: left; /* Float image to the left */
+  max-width: 250px;
+  float: left;
   margin-right: 1.5rem;
   margin-bottom: 1rem;
-  border: 2px solid #333333; /* Stronger image border */
-  border-radius: 0; /* Sharp corners */
-  filter: grayscale(100%) contrast(1.1); /* Grayscale with more contrast */
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15); /* More visible shadow */
+  border: 2px solid #333333;
+  border-radius: 0;
+  filter: grayscale(100%) contrast(1.1);
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
 }
 
 .news-content {
-  text-align: justify; /* Justify text for newspaper look */
+  text-align: justify;
   margin-bottom: 1rem;
   color: #222222;
 }
 
 .news-link {
-  color: #000000; /* Black link */
+  color: #000000;
   text-decoration: none;
   font-weight: bold;
-  border-bottom: 1px solid #000000; /* Solid underline */
+  border-bottom: 1px solid #000000;
   padding-bottom: 2px;
   transition:
     color 0.2s,

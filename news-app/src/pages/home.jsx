@@ -1,8 +1,8 @@
-import { lastestNews } from "../services/api";
+import { newsArticles } from "../services/news-service.js";
 import { useState, useEffect } from "react";
 import NewsCard from "../components/newsCard.jsx";
 
-function Home() {
+function Home({ category }) {
   const [articles, setArticles] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -10,7 +10,9 @@ function Home() {
   useEffect(() => {
     const loadArticles = async () => {
       try {
-        const data = await lastestNews();
+        const data = await newsArticles({
+          category: "general",
+        });
         setArticles(data);
       } catch (error) {
         console.error("Failed to load articles:", error);
@@ -21,13 +23,21 @@ function Home() {
     };
 
     loadArticles();
-  }, []);
+  }, [category]);
 
   return (
     <div>
-      {articles?.map((article) => (
-        <NewsCard article={article} key={article.url} />
-      ))}
+      {error && <div className="error-message">{error}</div>}
+
+      {loading ? (
+        <div className="loading">Loading...</div>
+      ) : (
+        <div>
+          {articles?.map((article) => (
+            <NewsCard article={article} key={article.url} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

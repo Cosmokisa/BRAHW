@@ -10,8 +10,10 @@ function NewsCard({ article }) {
         Save
       </button>
       <h3 className="news-title">{article.title}</h3>
-      <p className="news-author"> By {article.author}</p>
-      <img className="news-img" src={article.urlToImage} alt="" />
+      <p className="news-author">
+        {article.author} <br /> {article.publishedAt?.split("T")[0]}
+      </p>
+      <img className="news-img" src={article.urlToImage} alt={article.title} />
       <p className="news-content">{article.content}</p>
       <a className="news-link" href={article.url}>
         Read more »
